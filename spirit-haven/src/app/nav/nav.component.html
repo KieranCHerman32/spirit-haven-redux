@@ -1,1 +1,40 @@
-<p>nav works!</p>
+<mat-toolbar>
+  <!-- Visible to ALL -->
+  <ng-container>
+    <button mat-button routerLink="">Spirit Haven</button>
+    <button mat-button routerLink="">About</button>
+    <button mat-button routerLink="" [matMenuTriggerFor]="community">Community</button>
+    <button mat-button routerLink="" [matMenuTriggerFor]="festivals">Festivals</button>
+    <button mat-button routerLink="" [matMenuTriggerFor]="ranch">Ranch</button>
+    <button mat-button routerLink="">Contact Us</button>
+    <button mat-icon-button routerLink="">
+      <mat-icon>search</mat-icon>
+    </button>
+  </ng-container>
+
+  <!-- Visible to Members Regardless of Membership Status -->
+  <ng-container *ngIf="memberAuth">
+    <button mat-button routerLink="">Account</button>
+    <!-- Visible to ACTIVE Members -->
+    <button *ngIf="memberAuth.active" mat-button routerLink="">Dashboard</button>
+  </ng-container>
+
+  <!-- Sub-Menu Items -->
+  <ng-container>
+    <mat-menu #community="matMenu">
+      <button mat-menu-item>Membership</button>
+      <button mat-menu-item>Governance</button>
+      <button mat-menu-item>Policies</button>
+      <button mat-menu-item>Merch</button>
+    </mat-menu>
+    <mat-menu #festivals="matMenu">
+      <button mat-menu-item>Samhain 2023</button>
+      <button mat-menu-item>Vending at Festivals</button>
+    </mat-menu>
+    <mat-menu #ranch="matMenu">
+      <button mat-menu-item>WorkEnds</button>
+      <button mat-menu-item>Hosting at Spirit Haven Ranch</button>
+      <button mat-menu-item>Sacred Spaces Directory</button>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>
