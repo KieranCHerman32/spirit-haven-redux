@@ -1,77 +1,92 @@
 <mat-toolbar>
-  <!-- Visible to ALL -->
-  <ng-container>
-    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Spirit
-      Haven Logo Text</button>
-    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
-    <button
-            mat-button
-            routerLink=""
-            #communityTrigger="matMenuTrigger"
-            [matMenuTriggerFor]="community"
-            (mouseenter)="menuOpen(communityTrigger)">
-      Community
-    </button>
-    <button
-            mat-button
-            routerLink=""
-            #festivalTrigger="matMenuTrigger"
-            [matMenuTriggerFor]="festivals"
-            (mouseenter)="menuOpen(festivalTrigger)">
-      Festivals
-    </button>
-    <button
-            mat-button
-            routerLink=""
-            #ranchTrigger="matMenuTrigger"
-            [matMenuTriggerFor]="ranch"
-            (mouseenter)="menuOpen(ranchTrigger)">
-      Ranch
-    </button>
-    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact
-      Us</button>
-    <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
-      <mat-icon>search</mat-icon>
-    </button>
-  </ng-container>
+  <div class="row align-items-center">
+    <!-- Visible to ALL -->
+    <ng-container>
+      <div class="col">
+        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">
+          Spirit Haven Logo Text
+        </button>
+      </div>
 
-  <!-- Visible to Members Regardless of Membership Status -->
-  <ng-container *ngIf="memberAuth">
-    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Account</button>
-    <!-- Visible to ACTIVE Members -->
-    <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
-      Dashboard
-    </button>
-  </ng-container>
+      <div class="col">
+        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
+      </div>
 
-  <!-- Sub-Menu Items -->
-  <mat-menu
-            #community="matMenu"
-            [hasBackdrop]="false">
-    <span (mouseleave)="communityTrigger.closeMenu()">
-      <button mat-menu-item routerLink="">Membership</button>
-      <button mat-menu-item routerLink="">Governance</button>
-      <button mat-menu-item routerLink="">Policies</button>
-      <button mat-menu-item routerLink="">Shop</button>
-    </span>
-  </mat-menu>
+      <div class="col">
+        <button mat-button routerLink="" #communityTrigger="matMenuTrigger" [matMenuTriggerFor]="community"
+                (mouseenter)="menuOpen(communityTrigger)">
+          Community
+        </button>
+      </div>
 
-  <mat-menu
-            #festivals="matMenu"
-            [hasBackdrop]="false">
-    <span (mouseleave)="festivalTrigger.closeMenu()">
-      <button mat-menu-item routerLink="">Samhain 2023</button>
-      <button mat-menu-item routerLink="">Vending at Festivals</button>
-    </span>
-  </mat-menu>
+      <div class="col">
+        <button mat-button routerLink="" #festivalTrigger="matMenuTrigger" [matMenuTriggerFor]="festivals"
+                (mouseenter)="menuOpen(festivalTrigger)">
+          Festivals
+        </button>
+      </div>
 
-  <mat-menu
-            #ranch="matMenu"
-            [hasBackdrop]="false">
-    <span (mouseleave)="ranchTrigger.closeMenu()">
-      <button mat-menu-item routerLink="">WorkEnds</button>
-      <button mat-menu-item routerLink="">Hosting at Spirit Haven Ranch</button>
-      <button mat-menu-item routerLink="">Sacred Spaces Directory</button>
-    </span>
-  </mat-menu>
+      <div class="col">
+        <button mat-button routerLink="" #ranchTrigger="matMenuTrigger" [matMenuTriggerFor]="ranch"
+                (mouseenter)="menuOpen(ranchTrigger)">
+          Ranch
+        </button>
+      </div>
+
+      <div class="col">
+        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact Us</button>
+      </div>
+
+      <div class="col">
+        <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Visible to Members Regardless of Membership Status -->
+    <ng-container *ngIf="memberAuth">
+      <div class="col">
+        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Account</button>
+        <!-- Visible to ACTIVE Members -->
+      </div>
+
+      <div class="col">
+        <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
+          Dashboard
+        </button>
+      </div>
+
+      <div class="col">
+        <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
+          Log Out
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Sub-Menu Items -->
+    <mat-menu #community="matMenu" [hasBackdrop]="false">
+      <span (mouseleave)="communityTrigger.closeMenu()">
+        <button mat-menu-item routerLink="">Membership</button>
+        <button mat-menu-item routerLink="">Governance</button>
+        <button mat-menu-item routerLink="">Policies</button>
+        <button mat-menu-item routerLink="">Shop</button>
+      </span>
+    </mat-menu>
+
+    <mat-menu #festivals="matMenu" [hasBackdrop]="false">
+      <span (mouseleave)="festivalTrigger.closeMenu()">
+        <button mat-menu-item routerLink="">Samhain 2023</button>
+        <button mat-menu-item routerLink="">Vending at Festivals</button>
+      </span>
+    </mat-menu>
+
+    <mat-menu #ranch="matMenu" [hasBackdrop]="false">
+      <span (mouseleave)="ranchTrigger.closeMenu()">
+        <button mat-menu-item routerLink="">WorkEnds</button>
+        <button mat-menu-item routerLink="">Hosting at Spirit Haven Ranch</button>
+        <button mat-menu-item routerLink="">Sacred Spaces Directory</button>
+      </span>
+    </mat-menu>
+  </div>
 </mat-toolbar>
