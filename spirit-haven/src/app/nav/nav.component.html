@@ -1,14 +1,15 @@
 <mat-toolbar>
   <!-- Visible to ALL -->
   <ng-container>
-    <button mat-button routerLink="">Spirit Haven Logo Text</button>
-    <button mat-button routerLink="">About</button>
+    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Spirit
+      Haven Logo Text</button>
+    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
     <button
             mat-button
             routerLink=""
             #communityTrigger="matMenuTrigger"
             [matMenuTriggerFor]="community"
-            (mouseenter)="menuOpen(communityTrigger, [communityTrigger, festivalTrigger, ranchTrigger])">
+            (mouseenter)="menuOpen(communityTrigger)">
       Community
     </button>
     <button
@@ -16,7 +17,7 @@
             routerLink=""
             #festivalTrigger="matMenuTrigger"
             [matMenuTriggerFor]="festivals"
-            (mouseenter)="menuOpen(festivalTrigger, [communityTrigger, festivalTrigger, ranchTrigger])">
+            (mouseenter)="menuOpen(festivalTrigger)">
       Festivals
     </button>
     <button
@@ -24,20 +25,21 @@
             routerLink=""
             #ranchTrigger="matMenuTrigger"
             [matMenuTriggerFor]="ranch"
-            (mouseenter)="menuOpen(ranchTrigger, [communityTrigger, festivalTrigger, ranchTrigger])">
+            (mouseenter)="menuOpen(ranchTrigger)">
       Ranch
     </button>
-    <button mat-button routerLink="">Contact Us</button>
-    <button mat-icon-button routerLink="">
+    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact
+      Us</button>
+    <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
       <mat-icon>search</mat-icon>
     </button>
   </ng-container>
 
   <!-- Visible to Members Regardless of Membership Status -->
   <ng-container *ngIf="memberAuth">
-    <button mat-button routerLink="">Account</button>
+    <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Account</button>
     <!-- Visible to ACTIVE Members -->
-    <button *ngIf="memberAuth.active" mat-button routerLink="">
+    <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
       Dashboard
     </button>
   </ng-container>

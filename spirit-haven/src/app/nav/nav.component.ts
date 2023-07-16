@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
@@ -11,20 +11,28 @@ export class NavComponent {
     active: true,
   };
 
-  menuOpen(menuTrigger: MatMenuTrigger, arr: MatMenuTrigger[]) {
+  @ViewChildren(MatMenuTrigger)
+  triggerArr!: QueryList<MatMenuTrigger>;
+
+  menuOpen(menuTrigger: MatMenuTrigger) {
     if (!menuTrigger.menuOpen) {
-      for (const trigger of arr) {
-        if (trigger !== menuTrigger) {
-          trigger.closeMenu();
-        }
-      }
+      this.menuCloseAll(menuTrigger);
       setTimeout(() => menuTrigger.openMenu(), 100);
     }
   }
 
   menuClose(menuTrigger: MatMenuTrigger) {
     if (!menuTrigger.menuOpen) {
+      this.menuCloseAll(menuTrigger);
       menuTrigger.closeMenu();
+    }
+  }
+
+  menuCloseAll(menuTrigger?: MatMenuTrigger) {
+    for (const trigger of this.triggerArr) {
+      if (!menuTrigger || trigger !== menuTrigger) {
+        trigger.closeMenu();
+      }
     }
   }
 }
