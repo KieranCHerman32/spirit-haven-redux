@@ -1,17 +1,18 @@
 <mat-toolbar>
-  <div class="row align-items-center">
+  <div class="row align-items-center no-gutters w-100">
     <!-- Visible to ALL -->
+
+    <div class="col">
+      <button mat-button routerLink="" (mouseenter)="menuCloseAll()">
+        Spirit Haven Logo Text
+      </button>
+    </div>
+
+    <div class="col">
+      <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
+    </div>
+
     <ng-container>
-      <div class="col">
-        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">
-          Spirit Haven Logo Text
-        </button>
-      </div>
-
-      <div class="col">
-        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
-      </div>
-
       <div class="col">
         <button mat-button routerLink="" #communityTrigger="matMenuTrigger" [matMenuTriggerFor]="community"
                 (mouseenter)="menuOpen(communityTrigger)">
@@ -19,6 +20,17 @@
         </button>
       </div>
 
+      <mat-menu #community="matMenu" [hasBackdrop]="false">
+        <span (mouseleave)="communityTrigger.closeMenu()">
+          <button mat-menu-item routerLink="">Membership</button>
+          <button mat-menu-item routerLink="">Governance</button>
+          <button mat-menu-item routerLink="">Policies</button>
+          <button mat-menu-item routerLink="">Shop</button>
+        </span>
+      </mat-menu>
+    </ng-container>
+
+    <ng-container>
       <div class="col">
         <button mat-button routerLink="" #festivalTrigger="matMenuTrigger" [matMenuTriggerFor]="festivals"
                 (mouseenter)="menuOpen(festivalTrigger)">
@@ -26,6 +38,15 @@
         </button>
       </div>
 
+      <mat-menu #festivals="matMenu" [hasBackdrop]="false">
+        <span (mouseleave)="festivalTrigger.closeMenu()">
+          <button mat-menu-item routerLink="">Samhain 2023</button>
+          <button mat-menu-item routerLink="">Vending at Festivals</button>
+        </span>
+      </mat-menu>
+    </ng-container>
+
+    <ng-container>
       <div class="col">
         <button mat-button routerLink="" #ranchTrigger="matMenuTrigger" [matMenuTriggerFor]="ranch"
                 (mouseenter)="menuOpen(ranchTrigger)">
@@ -33,60 +54,49 @@
         </button>
       </div>
 
-      <div class="col">
-        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact Us</button>
-      </div>
-
-      <div class="col">
-        <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
+      <mat-menu #ranch="matMenu" [hasBackdrop]="false">
+        <span (mouseleave)="ranchTrigger.closeMenu()">
+          <button mat-menu-item routerLink="">WorkEnds</button>
+          <button mat-menu-item routerLink="">Hosting at Spirit Haven Ranch</button>
+          <button mat-menu-item routerLink="">Sacred Spaces Directory</button>
+        </span>
+      </mat-menu>
     </ng-container>
 
-    <!-- Visible to Members Regardless of Membership Status -->
-    <ng-container *ngIf="memberAuth">
-      <div class="col">
-        <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Account</button>
-        <!-- Visible to ACTIVE Members -->
-      </div>
+    <div class="col">
+      <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact</button>
+    </div>
 
+    <div class="col">
+      <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+    <ng-container *ngIf="memberAuth; else login">
       <div class="col">
-        <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
-          Dashboard
+        <!-- Visible to Members Regardless of Membership Status -->
+        <button mat-icon-button #accountTrigger="matMenuTrigger" [matMenuTriggerFor]="account"
+                (mouseenter)="menuOpen(accountTrigger)">
+          <mat-icon>person</mat-icon>
         </button>
       </div>
 
-      <div class="col">
-        <button *ngIf="memberAuth.active" mat-button routerLink="" (mouseenter)="menuCloseAll()">
-          Log Out
-        </button>
-      </div>
+      <mat-menu #account="matMenu" [hasBackdrop]="false">
+        <span (mouseleave)="accountTrigger.closeMenu()">
+          <button mat-menu-item routerLink="">{{memberAuth.prefName}}</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item routerLink="">Account</button>
+          <button *ngIf="memberAuth.active" mat-menu-item routerLink="">Dashboard</button>
+          <button mat-menu-item routerLink="">Logout</button>
+        </span>
+      </mat-menu>
     </ng-container>
 
-    <!-- Sub-Menu Items -->
-    <mat-menu #community="matMenu" [hasBackdrop]="false">
-      <span (mouseleave)="communityTrigger.closeMenu()">
-        <button mat-menu-item routerLink="">Membership</button>
-        <button mat-menu-item routerLink="">Governance</button>
-        <button mat-menu-item routerLink="">Policies</button>
-        <button mat-menu-item routerLink="">Shop</button>
-      </span>
-    </mat-menu>
-
-    <mat-menu #festivals="matMenu" [hasBackdrop]="false">
-      <span (mouseleave)="festivalTrigger.closeMenu()">
-        <button mat-menu-item routerLink="">Samhain 2023</button>
-        <button mat-menu-item routerLink="">Vending at Festivals</button>
-      </span>
-    </mat-menu>
-
-    <mat-menu #ranch="matMenu" [hasBackdrop]="false">
-      <span (mouseleave)="ranchTrigger.closeMenu()">
-        <button mat-menu-item routerLink="">WorkEnds</button>
-        <button mat-menu-item routerLink="">Hosting at Spirit Haven Ranch</button>
-        <button mat-menu-item routerLink="">Sacred Spaces Directory</button>
-      </span>
-    </mat-menu>
+    <ng-template #login>
+      <div class="col">
+        <button mat-button routerLink="">Login</button>
+      </div>
+    </ng-template>
   </div>
 </mat-toolbar>

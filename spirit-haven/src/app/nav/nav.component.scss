@@ -1,3 +1,17 @@
+// CSS Rules to view wireframe easily //
+// .row {
+//   border: 1px solid hotpink;
+// }
+
+// .col {
+//   border: 1px dotted hotpink;
+// }
+
+// Wireframe END //
+.col {
+  max-width: min-content;
+}
+
 mat-toolbar {
   position: sticky;
 }

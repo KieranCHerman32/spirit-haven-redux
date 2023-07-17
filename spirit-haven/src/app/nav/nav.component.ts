@@ -7,9 +7,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
-  memberAuth = {
-    active: true,
-  };
+  memberAuth: any;
 
   @ViewChildren(MatMenuTrigger)
   triggerArr!: QueryList<MatMenuTrigger>;
