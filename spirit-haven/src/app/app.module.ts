@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDividerModule } from '@angular/material/divider';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatMenuModule,
     NgbModule,
     MatDividerModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
