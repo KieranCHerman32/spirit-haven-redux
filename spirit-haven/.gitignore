@@ -390,6 +390,7 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Compiled output
+src/dist
 /dist
 /tmp
 /out-tsc
