@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDividerModule } from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgOptimizedImage } from '@angular/common';
+import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgOptimizedImage } from '@angular/common';
     NavComponent,
     FooterComponent,
     MainContentComponent,
+    PrincipleDividerComponent,
   ],
   imports: [
     BrowserModule,
