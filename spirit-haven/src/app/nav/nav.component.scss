@@ -1,17 +1,34 @@
-// CSS Rules to view wireframe easily //
-// .row {
-//   border: 1px solid hotpink;
-// }
+@import '../../spirit-haven-pallette.scss';
 
-// .col {
-//   border: 1px dotted hotpink;
-// }
-
-// Wireframe END //
 .col {
   max-width: min-content;
 }
 
+.row {
+  margin: unset;
+}
+
+.start {
+  justify-content: flex-start;
+  display: inline-flex;
+}
+
+.end {
+  justify-content: flex-end;
+  display: inline-flex;
+}
+
 mat-toolbar {
   position: sticky;
+  background-color: $white;
+  color: $lite-purple;
+
+  // Wireframe //
+  // border: 1px solid hotpink;
+}
+
+#logo-fix {
+  margin: 0%;
+  padding: 0%;
+  margin-right: 7.5rem;
 }

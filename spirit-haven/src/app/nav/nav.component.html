@@ -1,13 +1,12 @@
 <mat-toolbar>
   <div class="row align-items-center no-gutters w-100">
-    <!-- Visible to ALL -->
-
-    <div class="col">
-      <button mat-button routerLink="" (mouseenter)="menuCloseAll()">
-        Spirit Haven Logo Text
-      </button>
+    <div class="col-lg" id="logo-fix">
+      <img class="img-fluid" ngSrc="../../assets/logo-text-purple-2048x237.webp" alt="Spirit Haven Typographical Logo"
+           height="50" width="433.5" routerLink="" (mouseenter)="menuCloseAll()">
+      <!-- Spirit Haven Logo Text -->
     </div>
 
+    <!-- Visible to ALL -->
     <div class="col">
       <button mat-button routerLink="" (mouseenter)="menuCloseAll()">About</button>
     </div>
@@ -67,8 +66,8 @@
       <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact</button>
     </div>
 
-    <div class="col">
-      <button mat-icon-button routerLink="" (mouseenter)="menuCloseAll()">
+    <div class="col-lg end">
+      <button mat-icon-button="" routerLink="" (mouseenter)="menuCloseAll()">
         <mat-icon>search</mat-icon>
       </button>
     </div>
@@ -95,7 +94,7 @@
 
     <ng-template #login>
       <div class="col">
-        <button mat-button routerLink="">Login</button>
+        <button mat-fab extended routerLink="">Login</button>
       </div>
     </ng-template>
   </div>
