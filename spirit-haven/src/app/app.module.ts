@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,7 +21,6 @@ import { PrincipleDividerComponent } from './principle-divider/principle-divider
     AppComponent,
     NavComponent,
     FooterComponent,
-    MainContentComponent,
     PrincipleDividerComponent,
   ],
   imports: [
