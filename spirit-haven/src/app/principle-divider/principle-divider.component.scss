@@ -1,0 +1,13 @@
+@import '../../spirit-haven-pallette.scss';
+
+mat-toolbar {
+  background-color: $water;
+  color: $dark-purple;
+  padding: 3em 0;
+  // width: 100vw;
+}
+
+.col,
+.row {
+  white-space: nowrap;
+}

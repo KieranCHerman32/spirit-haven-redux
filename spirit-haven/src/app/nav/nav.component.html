@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="sticky-top">
   <div class="row align-items-center no-gutters w-100">
     <div class="col-lg" id="logo-fix">
       <img priority class="img-fluid" ngSrc="../../assets/logo-text-purple-2048x237.webp"
@@ -83,7 +83,7 @@
 
       <mat-menu #account="matMenu" [hasBackdrop]="false">
         <span (mouseleave)="accountTrigger.closeMenu()">
-          <button mat-menu-item routerLink="">{{memberAuth.prefName}}</button>
+          <button mat-menu-item routerLink="" disabled>{{memberAuth.prefName}}</button>
           <mat-divider></mat-divider>
           <button mat-menu-item routerLink="">Account</button>
           <button *ngIf="memberAuth.active" mat-menu-item routerLink="">Dashboard</button>
@@ -94,7 +94,7 @@
 
     <ng-template #login>
       <div class="col">
-        <button mat-fab extended routerLink="">Login</button>
+        <button mat-fab extended routerLink="">Login / Register</button>
       </div>
     </ng-template>
   </div>
