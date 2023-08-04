@@ -3,4 +3,6 @@
 mat-toolbar {
   background-color: $lite-purple;
   color: $white;
+  height: unset;
+  padding: 2em;
 }
