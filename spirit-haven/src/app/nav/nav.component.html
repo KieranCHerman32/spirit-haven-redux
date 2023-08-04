@@ -83,7 +83,7 @@
 
       <mat-menu #account="matMenu" [hasBackdrop]="false">
         <span (mouseleave)="accountTrigger.closeMenu()">
-          <button mat-menu-item routerLink="">{{memberAuth.prefName}}</button>
+          <button mat-menu-item routerLink="" disabled>{{memberAuth.prefName}}</button>
           <mat-divider></mat-divider>
           <button mat-menu-item routerLink="">Account</button>
           <button *ngIf="memberAuth.active" mat-menu-item routerLink="">Dashboard</button>
