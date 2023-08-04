@@ -1,8 +1,27 @@
 <mat-toolbar>
   <div class="row align-items-center no-gutters w-100 h-100">
-    <div class="col-lg">
+    <div class="col">
       <img priority class="img-fluid" ngSrc="../../assets/logo-text-white.png"
            alt="Spirit Haven Stacked Typographical Logo" height="110" width="257.4" routerLink="">
     </div>
+
+    <div class="col">
+      <div class="row align-items-center no-gutters">
+        <div class="col text-center">
+          <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+          <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
+        </div>
+      </div>
+
+      <div class="row align-items-center no-gutters">
+        <div class="col text-center">
+          © Copyright 2023 Spirit Haven, Inc. All rights reserved.
+          &nbsp;<a routerLink="">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col"></div>
+
   </div>
 </mat-toolbar>

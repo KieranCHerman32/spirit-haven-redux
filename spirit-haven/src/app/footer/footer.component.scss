@@ -4,5 +4,20 @@ mat-toolbar {
   background-color: $lite-purple;
   color: $white;
   height: unset;
-  padding: 2em;
+  padding: 1em;
+}
+
+::ng-deep .svg-inline--fa {
+  height: 2em;
+  margin: .5em;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  flex-direction: column;
+}
+
+.col,
+.row {
+  margin-top: auto;
 }
