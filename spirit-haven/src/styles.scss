@@ -32,16 +32,16 @@ $spirit-haven-theme: mat.define-light-theme((color: (primary: $spirit-haven-prim
 /* You can add global styles to this file, and also import other style files */
 
 app-root {
-  min-height: 100%;
+  min-height: 100vh;
   // height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-// html,
-// body {
-//   min-height: 100%;
-// }
+html,
+body {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
