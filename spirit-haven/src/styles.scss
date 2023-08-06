@@ -32,18 +32,35 @@ $spirit-haven-theme: mat.define-light-theme((color: (primary: $spirit-haven-prim
 /* You can add global styles to this file, and also import other style files */
 
 app-root {
-  min-height: 100%;
-  height: 100%;
+  min-height: 100vh;
+  // height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans Variable', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Georama Variable', 'Open Sans Variable', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans Variable', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
