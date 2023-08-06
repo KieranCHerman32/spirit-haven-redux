@@ -1,2 +1,17 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-fonts.scss';
 
+h4 {
+  margin: .5em;
+  color: $white;
+  font-weight: 600;
+  font-size: 1.47em;
+  font-family: 'Georama Variable', 'Open Sans', sans-serif;
+  letter-spacing: .02em;
+}
 
+div {
+  background-color: $dark-purple;
+  margin: 0%;
+  padding: 0%;
+}
