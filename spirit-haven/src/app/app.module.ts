@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { BurnBannerComponent } from './burn-banner/burn-banner.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BurnBannerComponent } from './burn-banner/burn-banner.component';
     FooterComponent,
     PrincipleDividerComponent,
     BurnBannerComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
