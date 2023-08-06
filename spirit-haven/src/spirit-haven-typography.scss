@@ -1,0 +1,35 @@
+@import '@fontsource-variable/georama';
+@import '@fontsource-variable/open-sans';
+@import '@fontsource-variable/work-sans';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Georama Variable', 'Open Sans Variable', sans-serif;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+}
+
+h2,
+h5 {
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Open Sans Variable', sans-serif;
+}
+
+// TODO: Add responsive typography styles //
+// h5 {
+//   font-family: 'Work Sans Variable', 'Open Sans Variable', sans-serif;
+// }
