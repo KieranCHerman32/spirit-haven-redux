@@ -22,6 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { AboutComponent } from './about/about.component';
+import { PrinciplesComponent } from './principles/principles.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     PrincipleDividerComponent,
     BurnBannerComponent,
     PrivacyPolicyComponent,
+    AboutComponent,
+    PrinciplesComponent,
   ],
   imports: [
     BrowserModule,
