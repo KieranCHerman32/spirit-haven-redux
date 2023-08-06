@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
+import { BurnBannerComponent } from './burn-banner/burn-banner.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PrincipleDividerComponent } from './principle-divider/principle-divider
     NavComponent,
     FooterComponent,
     PrincipleDividerComponent,
+    BurnBannerComponent,
   ],
   imports: [
     BrowserModule,
