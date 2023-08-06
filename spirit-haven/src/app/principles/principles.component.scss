@@ -1,2 +1,15 @@
 @import '../../spirit-haven-pallette.scss';
 @import '../../spirit-haven-fonts.scss';
+
+.mat-expansion-panel,
+.mat-expansion-panel-header-title {
+  color: $white;
+}
+
+.mat-expansion-panel {
+  background-color: $lite-purple;
+}
+
+.mat-expansion-panel-header-title {
+  font-weight: 700;
+}

@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -49,6 +50,7 @@ import { PrinciplesComponent } from './principles/principles.component';
     FontAwesomeModule,
     NgOptimizedImage,
     MatListModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
