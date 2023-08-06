@@ -1,5 +1,6 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nav',
@@ -7,6 +8,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
+  env = environment;
   memberAuth: any;
 
   @ViewChildren(MatMenuTrigger)
