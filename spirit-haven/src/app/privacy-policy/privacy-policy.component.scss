@@ -1,16 +1,16 @@
 @import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
 
 h1 {
-  color: $lite-purple;
+  color: $sh-purple;
   font-size: 2rem;
 }
 
 p {
-  color: $dark-purple;
-  font-weight: 400;
+  color: $sh-text-dark-purple;
 }
 
 #policy-header {
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 2.75rem;
 }

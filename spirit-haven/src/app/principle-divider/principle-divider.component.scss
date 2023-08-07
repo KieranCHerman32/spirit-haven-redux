@@ -1,10 +1,10 @@
 @import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
 
 mat-toolbar {
   background-color: $water;
-  color: $dark-purple;
+  color: $sh-text-dark-purple;
   padding: 3em 0;
-  // width: 100vw;
 }
 
 .col,

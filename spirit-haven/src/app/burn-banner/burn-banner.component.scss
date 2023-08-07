@@ -1,16 +1,15 @@
 @import '../../spirit-haven-pallette.scss';
-@import '../../spirit-haven-fonts.scss';
+@import '../../spirit-haven-typography.scss';
 
-h4 {
+h3 {
   margin: .5em;
   color: $white;
-  font-weight: 600;
   font-size: 1.47rem;
   letter-spacing: .02rem;
 }
 
 div {
-  background-color: $dark-purple;
+  background-color: $sh-text-dark-purple;
   margin: 0%;
   padding: 0%;
 }

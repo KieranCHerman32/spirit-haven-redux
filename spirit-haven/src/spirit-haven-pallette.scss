@@ -1,12 +1,31 @@
 // Spirit Haven Colors //
-$jacarta: #32285A;
+$black: #000000;
+$white: #FFFFFF;
 $blue-magenta-violet: #5B4795;
+$languid-lavender: #D6D1E4;
+$jacarta: #32285A;
+$emerald: #56BB83;
+$eton-blue: #9AC7A1;
 $maximum-blue-green: #2CB3BC;
 $water: #CAECEE;
-$languid-lavender: #D6D1E4;
-$eton-blue: #8DC99E;
-$white: #FFFFFF;
-$emerald: #56BB82;
 
-$dark-purple: $jacarta;
-$lite-purple: $blue-magenta-violet;
+// Helper Variables //
+// USE THESE WHEN DEFINING VALUES IN SCSS //
+$sh-purple: $blue-magenta-violet;
+$sh-purple-25: $languid-lavender;
+$sh-text-dark-purple: $jacarta;
+$sh-accent-green: $emerald;
+$sh-accent-green-light: $eton-blue;
+$sh-teal: $maximum-blue-green;
+$sh-teal-25: $water;
+
+// Web-Safe Colors //
+// SUGGESTED CLOSEST WEB-SAFE MATCH //
+// USE WITH CAUTION //
+$sh-purple-ws: #663399;
+$sh-purple-25-ws: #CCCCCC;
+$sh-text-dark-purple-ws: #333366;
+$sh-accent-green-ws: #66CC99;
+$sh-accent-green-light-ws: #99CC99;
+$sh-teal-ws: #33CCCC;
+$sh-teal-25-ws: #CCFFFF;
