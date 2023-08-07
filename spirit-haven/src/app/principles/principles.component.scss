@@ -1,5 +1,5 @@
 @import '../../spirit-haven-pallette.scss';
-@import '../../spirit-haven-fonts.scss';
+@import '../../spirit-haven-typography.scss';
 
 .mat-expansion-panel,
 .mat-expansion-panel-header-title {
@@ -7,7 +7,8 @@
 }
 
 .mat-expansion-panel {
-  background-color: $lite-purple;
+  background-color: $sh-purple;
+  margin: .25rem 0;
 }
 
 .mat-expansion-panel-header-title {
