@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "@fontsource-variable/georama": "^5.0.9",
+    "@fontsource-variable/material-symbols-rounded": "^5.0.7",
     "@fontsource-variable/open-sans": "^5.0.9",
     "@fontsource-variable/work-sans": "^5.0.9",
     "@fortawesome/angular-fontawesome": "^0.13.0",
