@@ -1,2 +1,10 @@
 @import '../../spirit-haven-pallette.scss';
 @import '../../spirit-haven-typography.scss';
+
+h1 {
+  color: $white;
+}
+
+#about-header h1 {
+  margin: 1em 0;
+}
