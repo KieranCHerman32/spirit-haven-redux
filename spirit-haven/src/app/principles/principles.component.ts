@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
@@ -6,12 +6,39 @@ import { MatExpansionPanel } from '@angular/material/expansion';
   templateUrl: './principles.component.html',
   styleUrls: ['./principles.component.scss'],
 })
-export class PrinciplesComponent {
+export class PrinciplesComponent implements OnInit {
   @ViewChildren(MatExpansionPanel)
   panels!: QueryList<MatExpansionPanel>;
-
+  principles = panelData.principles;
   exPanel: any[] = [];
-  principles = [
+
+  img: number[] = [56, 100];
+
+  ngOnInit(): void {}
+
+  findPanel(index: number) {
+    return this.panels.find(
+      (panelRef) =>
+        panelRef.id.toString().charAt(panelRef.id.length - 1) ==
+        index.toString()
+    );
+  }
+
+  showToggle(index: number) {
+    return !this.exPanel.includes(index) ? 'add' : 'remove';
+  }
+
+  togglePanel(index: number) {
+    const panel = this.findPanel(index);
+    !this.exPanel.includes(index)
+      ? this.exPanel.push(index)
+      : this.exPanel.splice(this.exPanel.indexOf(index), 1);
+    panel?.toggle();
+  }
+}
+
+export class panelData {
+  static principles = [
     {
       nm: 'Inclusion',
       desc: [
@@ -68,24 +95,4 @@ export class PrinciplesComponent {
       ],
     },
   ];
-
-  findPanel(index: number) {
-    return this.panels.find(
-      (panelRef) =>
-        panelRef.id.toString().charAt(panelRef.id.length - 1) ==
-        index.toString()
-    );
-  }
-
-  showToggle(index: number) {
-    return !this.exPanel.includes(index) ? 'add' : 'remove';
-  }
-
-  togglePanel(index: number) {
-    const panel = this.findPanel(index);
-    !this.exPanel.includes(index)
-      ? this.exPanel.push(index)
-      : this.exPanel.splice(this.exPanel.indexOf(index), 1);
-    panel?.toggle();
-  }
 }

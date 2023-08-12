@@ -1,16 +1,25 @@
-<div class="container">
-  <h1>Our Principles</h1>
-  <mat-expansion-panel *ngFor="let p of principles; let i = index" class="me-5" hideToggle disabled>
-    <mat-expansion-panel-header (click)="togglePanel(i)">
-      <mat-panel-description>
-        <mat-icon>{{showToggle(i)}}</mat-icon>
-      </mat-panel-description>
-      <mat-panel-title>
-        {{p.nm}}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p *ngFor="let p of p.desc">
-      {{p}}
-    </p>
-  </mat-expansion-panel>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <img *mcRerender="img" priority id="guardian-fire" class="img-fluid"
+           ngSrc="../../assets/.png/f4eef7744cee399396eab61a8ef4c81f.jpg" alt="" [width]="img[0]" [height]="img[1]">
+    </div>
+
+    <div id="panels" class="col">
+      <h1>Our Principles</h1>
+      <mat-expansion-panel *ngFor="let p of principles; let i = index" class="me-5" hideToggle disabled>
+        <mat-expansion-panel-header (click)="togglePanel(i)">
+          <mat-panel-description>
+            <mat-icon>{{showToggle(i)}}</mat-icon>
+          </mat-panel-description>
+          <mat-panel-title>
+            {{p.nm}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p *ngFor="let p of p.desc">
+          {{p}}
+        </p>
+      </mat-expansion-panel>
+    </div>
+  </div>
 </div>
