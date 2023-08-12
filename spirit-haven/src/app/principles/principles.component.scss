@@ -1,6 +1,10 @@
 @import '../../spirit-haven-pallette.scss';
 @import '../../spirit-haven-typography.scss';
 
+h1 {
+  color: $white;
+}
+
 .mat-expansion-panel,
 .mat-expansion-panel-header-title {
   color: $white;
@@ -11,6 +15,20 @@
   margin: .25rem 0;
 }
 
+.mat-expansion-panel-header[aria-disabled=true] {
+  color: unset;
+  padding-right: 0%;
+}
+
 .mat-expansion-panel-header-title {
   font-weight: 700;
+}
+
+.mat-expansion-panel-header-description {
+  flex-grow: unset;
+}
+
+.material-icons {
+  font-family: 'Material Symbols Rounded Variable', 'Material Icons';
+  font-weight: bold;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
@@ -6,9 +6,11 @@ import { MatExpansionPanel } from '@angular/material/expansion';
   templateUrl: './principles.component.html',
   styleUrls: ['./principles.component.scss'],
 })
-export class PrinciplesComponent implements OnInit {
+export class PrinciplesComponent {
   @ViewChildren(MatExpansionPanel)
   panels!: QueryList<MatExpansionPanel>;
+
+  exPanel: any[] = [];
   principles = [
     {
       nm: 'Inclusion',
@@ -67,12 +69,23 @@ export class PrinciplesComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
-    console.log(this.principles);
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    for (const panel of this.panels) {
-      console.log(panel);
-    }
+  findPanel(index: number) {
+    return this.panels.find(
+      (panelRef) =>
+        panelRef.id.toString().charAt(panelRef.id.length - 1) ==
+        index.toString()
+    );
+  }
+
+  showToggle(index: number) {
+    return !this.exPanel.includes(index) ? 'add' : 'remove';
+  }
+
+  togglePanel(index: number) {
+    const panel = this.findPanel(index);
+    !this.exPanel.includes(index)
+      ? this.exPanel.push(index)
+      : this.exPanel.splice(this.exPanel.indexOf(index), 1);
+    panel?.toggle();
   }
 }
