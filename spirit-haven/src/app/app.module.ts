@@ -25,6 +25,8 @@ import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { CampfireComponent } from './campfire/campfire.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     PrivacyPolicyComponent,
     AboutComponent,
     PrinciplesComponent,
+    TimelineComponent,
+    CampfireComponent,
   ],
   imports: [
     BrowserModule,
