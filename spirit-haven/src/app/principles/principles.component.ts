@@ -24,6 +24,10 @@ export class PrinciplesComponent {
     return !this.exPanel.includes(index) ? 'add' : 'remove';
   }
 
+  showDivider(index: number) {
+    return !this.exPanel.includes(index);
+  }
+
   togglePanel(index: number) {
     const panel = this.findPanel(index);
     !this.exPanel.includes(index)

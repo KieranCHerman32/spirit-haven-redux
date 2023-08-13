@@ -3,6 +3,7 @@
 
 h1 {
   color: $white;
+  margin: 1em 0 1em 2em;
 }
 
 img {
@@ -21,9 +22,8 @@ img {
 
 .mat-expansion-panel:not(.mat-elevation-z) {
   box-shadow: none;
+  margin: 0 5em;
 }
-
-::ng-deep .mat-expansion-panel {}
 
 .mat-expansion-panel-header[aria-disabled=true] {
   color: unset;
@@ -43,9 +43,9 @@ img {
   font-weight: bold;
 }
 
-.col {
-  padding: unset;
-  margin: unset;
+.mat-divider {
+  border-top: 1px solid white;
+  margin: 0 5em;
 }
 
 #img {
@@ -55,4 +55,11 @@ img {
 
 #panels {
   background-color: $sh-purple;
+  padding-bottom: 3em;
+}
+
+#panels .row,
+.col {
+  padding: unset;
+  margin: unset;
 }

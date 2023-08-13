@@ -2,9 +2,29 @@
 @import '../../spirit-haven-typography.scss';
 
 h1 {
-  color: $white;
+  color: $sh-purple
+}
+
+.img-fluid {
+  object-fit: cover;
+}
+
+#img {
+  position: relative;
+  left: 0;
+  padding: unset;
+  margin: unset;
+}
+
+#mission-header {
+  margin: 5em 0;
 }
 
 #about-header h1 {
-  margin: 1em 0;
+  color: $white;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 1000;
+  background-color: #5B479550;
 }
