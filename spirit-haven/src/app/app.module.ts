@@ -25,8 +25,8 @@ import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { TimelineComponent } from './timeline/timeline.component';
-import { CampfireComponent } from './campfire/campfire.component';
+import { HistoryComponent } from './history/history.component';
+import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,8 @@ import { CampfireComponent } from './campfire/campfire.component';
     PrivacyPolicyComponent,
     AboutComponent,
     PrinciplesComponent,
-    TimelineComponent,
-    CampfireComponent,
+    HistoryComponent,
+    CampfireStoriesComponent,
   ],
   imports: [
     BrowserModule,
