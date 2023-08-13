@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
@@ -6,15 +6,11 @@ import { MatExpansionPanel } from '@angular/material/expansion';
   templateUrl: './principles.component.html',
   styleUrls: ['./principles.component.scss'],
 })
-export class PrinciplesComponent implements OnInit {
+export class PrinciplesComponent {
   @ViewChildren(MatExpansionPanel)
   panels!: QueryList<MatExpansionPanel>;
   principles = panelData.principles;
   exPanel: any[] = [];
-
-  img: number[] = [56, 100];
-
-  ngOnInit(): void {}
 
   findPanel(index: number) {
     return this.panels.find(

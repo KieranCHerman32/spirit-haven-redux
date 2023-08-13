@@ -5,6 +5,10 @@ h1 {
   color: $white;
 }
 
+img {
+  object-fit: cover;
+}
+
 .mat-expansion-panel,
 .mat-expansion-panel-header-title {
   color: $white;
@@ -14,6 +18,12 @@ h1 {
   background-color: $sh-purple;
   margin: .25rem 0;
 }
+
+.mat-expansion-panel:not(.mat-elevation-z) {
+  box-shadow: none;
+}
+
+::ng-deep .mat-expansion-panel {}
 
 .mat-expansion-panel-header[aria-disabled=true] {
   color: unset;
@@ -31,4 +41,18 @@ h1 {
 .material-icons {
   font-family: 'Material Symbols Rounded Variable', 'Material Icons';
   font-weight: bold;
+}
+
+.col {
+  padding: unset;
+  margin: unset;
+}
+
+#img {
+  position: relative;
+  left: 0;
+}
+
+#panels {
+  background-color: $sh-purple;
 }

@@ -1,13 +1,13 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <img priority id="guardian-fire" class="img-fluid" ngSrc="../../assets/.png/f4eef7744cee399396eab61a8ef4c81f.jpg"
-           alt="" [width]="img[0]" [height]="img[1]">
-    </div>
+<div class="row">
+  <div id="img" class="col">
+    <img priority fill id="guardian-fire" class="img-fluid"
+         ngSrc="../../assets/.png/f4eef7744cee399396eab61a8ef4c81f.jpg" alt="">
+  </div>
 
-    <div id="panels" class="col">
-      <h1>Our Principles</h1>
-      <mat-expansion-panel *ngFor="let p of principles; let i = index" class="me-5" hideToggle disabled>
+  <div id="panels" class="col">
+    <h1>Our Principles</h1>
+    <ng-container *ngFor="let p of principles; let i = index">
+      <mat-expansion-panel class="me-5" hideToggle disabled>
         <mat-expansion-panel-header (click)="togglePanel(i)">
           <mat-panel-description>
             <mat-icon>{{showToggle(i)}}</mat-icon>
@@ -20,6 +20,6 @@
           {{p}}
         </p>
       </mat-expansion-panel>
-    </div>
+    </ng-container>
   </div>
 </div>
