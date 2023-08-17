@@ -27,6 +27,7 @@ import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { HistoryComponent } from './history/history.component';
 import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.co
     PrinciplesComponent,
     HistoryComponent,
     CampfireStoriesComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
