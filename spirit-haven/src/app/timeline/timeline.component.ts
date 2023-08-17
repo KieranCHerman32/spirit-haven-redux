@@ -1,12 +1,42 @@
 import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { TimelineEvent } from '../types/TimelineEvent';
+
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
+})
 export class TimelineComponent implements AfterViewInit {
+  lineHeight = 0;
   events: TimelineEvent[] = Events.events;
   stories: TimelineEvent[] = Events.stories;
+  @HostListener('window:resize', ['$event']) onResize(event: any) {
+    this.setLineHeight();
+  }
+
+  ngAfterViewInit() {
+    document.querySelectorAll('.title').forEach((item, index) => {
+      index % 2 == 0 ? item.classList.add('start') : item.classList.add('end');
+    });
+
+    document.querySelectorAll('mat-icon.circle').forEach((item, index) => {
+      index % 2 == 0 ? item.classList.add('left') : item.classList.add('right');
+    });
+
+    document.querySelectorAll('.content').forEach((item, index) => {
+      index % 2 == 0 ? item.classList.add('start') : item.classList.add('end');
+    });
+
+    this.setLineHeight();
+  }
+
+  setLineHeight() {
+    let height = document
+      .querySelector('.container-fluid')
+      ?.getBoundingClientRect().height;
+
+    this.lineHeight = height ?? 0;
+  }
 }
 
 export class Events {
