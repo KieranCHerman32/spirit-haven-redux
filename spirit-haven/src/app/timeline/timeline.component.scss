@@ -40,6 +40,23 @@ mat-icon.inner {
   margin-top: calc(.75rem / 2);
 }
 
+mat-icon.timeline-start,
+mat-icon.timeline-end {
+  position: relative;
+  color: $sh-purple-25;
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+}
+
+mat-icon.timeline-start {
+  top: -6px;
+}
+
+mat-icon.timeline-end {
+  bottom: -6px;
+}
+
 .start .spacer {
   margin-right: -3%;
   margin-top: .5rem;
@@ -109,13 +126,11 @@ mat-icon.inner {
 .col.content.start {
   margin-left: calc(10% - 1.5rem);
   margin-top: -.5rem;
-  border: 1px solid hotpink;
 }
 
 .col.content.end {
   margin-right: calc(10% - 1.5rem);
   margin-top: -.5rem;
-  border: 1px dashed hotpink;
 }
 
 .col-1 {
@@ -129,7 +144,12 @@ p {
 .center-line {
   position: absolute;
   left: calc(50% - 2px);
-  height: 100%;
   width: 4px;
+  border-radius: 6px;
   background: $sh-purple-25;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }

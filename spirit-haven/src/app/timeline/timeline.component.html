@@ -1,6 +1,10 @@
 <div class="container-fluid">
   <div class="center-line" [style.height.px]="[lineHeight]">
+    <mat-icon class="timeline-start">circle</mat-icon>
+    <mat-icon class="timeline-end">circle</mat-icon>
   </div>
+
+  <span class="row"></span>
 
   <div *ngFor="let event of events" class="row">
     <div class="col">
