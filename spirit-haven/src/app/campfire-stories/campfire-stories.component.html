@@ -1,1 +1,43 @@
-<p>campfire-stories works!</p>
+<div class="container">
+  <div id="history-header">
+    <h2 class="text-center">Campfire Stories</h2>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <mat-card *ngFor="let event of stories">
+        <mat-card-header>
+          <mat-card-title>
+            <h3>"{{event.title}}"</h3>
+          </mat-card-title>
+          <mat-card-subtitle class="fst-italic">
+
+            <ng-container *ngIf="event.authored; else unknown">
+              <p>
+                &nbsp;-&nbsp;{{(event.author??'Author Unknown').trim() + ','}}
+                <span *ngIf="event.authored">
+                  c.&nbsp;{{event.authored}}
+                </span>
+              </p>
+            </ng-container>
+
+            <ng-template #unknown>
+              <p>
+                &nbsp;-&nbsp;{{(event.author??'Author Unknown').trim()}}
+              </p>
+            </ng-template>
+
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ng-container *ngFor="let p of event.content; let first = first; let last = last;">
+            <p>
+              <span *ngIf="first">"</span>
+              {{p.trim()}}
+              <span *ngIf="last">"</span>
+            </p>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

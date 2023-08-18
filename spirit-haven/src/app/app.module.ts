@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -57,6 +58,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     NgOptimizedImage,
     MatListModule,
     MatExpansionModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
