@@ -1,7 +1,5 @@
-import { Component, Input, QueryList, ViewChildren } from '@angular/core';
-import { TimelineComponent } from '../timeline/timeline.component';
+import { Component } from '@angular/core';
 import { TimelineEvent } from '../types/TimelineEvent';
-import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-campfire-stories',
