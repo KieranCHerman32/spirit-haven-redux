@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="center-line" [style.height.px]="[lineHeight]">
+    <mat-icon class="timeline-start">circle</mat-icon>
+    <mat-icon class="timeline-end">circle</mat-icon>
+  </div>
+
+  <span class="row"></span>
+
+  <div *ngFor="let event of events" class="row">
+    <div class="col">
+      <h6 class="title">
+        <span class="spacer">
+          {{event.date}}
+        </span>
+      </h6>
+    </div>
+
+    <div class="col-1">
+      <mat-icon class="circle outer">circle</mat-icon>
+      <mat-icon class="circle inner">circle</mat-icon>
+    </div>
+
+    <div class="col content">
+      <h4>{{event.title}}</h4>
+      <ng-container *ngFor="let p of event.content; let first = first; let last = last;">
+        <p>
+          <span *ngIf="first && event.author">"</span>
+          {{p.trim()}}
+          <span *ngIf="last && event.author">"</span>
+        </p>
+      </ng-container>
+      <p *ngIf="event.author">
+        - {{event.author}}
+        <span *ngIf="event.authored">
+          <br>Written {{event.authored}}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

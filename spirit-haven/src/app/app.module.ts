@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,13 +21,14 @@ import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BurnBannerComponent } from './burn-banner/burn-banner.component';
+import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
 import { FooterComponent } from './footer/footer.component';
+import { HistoryComponent } from './history/history.component';
 import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { HistoryComponent } from './history/history.component';
-import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.co
     PrinciplesComponent,
     HistoryComponent,
     CampfireStoriesComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.co
     NgOptimizedImage,
     MatListModule,
     MatExpansionModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,7 +2,7 @@
 @import '../../spirit-haven-typography.scss';
 
 h1 {
-  color: $sh-purple
+  color: $sh-purple;
 }
 
 .img-fluid {
@@ -18,6 +18,10 @@ h1 {
 
 #mission-header {
   margin: 6rem 0;
+}
+
+#mission-header h1 {
+  margin-bottom: 1rem;
 }
 
 #about-header h1 {
