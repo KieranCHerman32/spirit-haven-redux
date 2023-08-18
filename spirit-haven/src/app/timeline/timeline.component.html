@@ -24,13 +24,13 @@
       <h4>{{event.title}}</h4>
       <ng-container *ngFor="let p of event.content; let first = first; let last = last;">
         <p>
-          <span *ngIf="first">"</span>
+          <span *ngIf="first && event.author">"</span>
           {{p.trim()}}
-          <span *ngIf="last">"</span>
+          <span *ngIf="last && event.author">"</span>
         </p>
       </ng-container>
-      <p>
-        - {{event.author??'Author Unknown'}}
+      <p *ngIf="event.author">
+        - {{event.author}}
         <span *ngIf="event.authored">
           <br>Written {{event.authored}}
         </span>
