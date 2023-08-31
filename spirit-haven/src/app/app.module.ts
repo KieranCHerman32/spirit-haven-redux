@@ -32,6 +32,7 @@ import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     TimelineComponent,
     HomeComponent,
     CarouselComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,

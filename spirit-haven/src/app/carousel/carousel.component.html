@@ -1,9 +1,23 @@
-<c-carousel [animate]="false" transition="crossfade">
+<ng-container>
+  <app-countdown></app-countdown>
+</ng-container>
+
+<c-carousel [animate]="false" transition="crossfade" [interval]="5000" pause="hover" [touch]="true">
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of slides">
-      <img [src]="slide.src" alt="{{slide.title}}" class="d-block w-100" loading="lazy" />
+      <img priority fill class="img-fluid" [ngSrc]="slide.src" />
+      <div class="wrapper">
+        <div class="row">
+          <div class="col">
+            <h1>{{slide.title}}</h1>
+            <h5>{{slide.subtitle}}</h5>
+          </div>
+          <div class="col-1"></div>
+          <div class="col"></div>
+        </div>
+      </div>
     </c-carousel-item>
+
+    <div class="wrapper bg"></div>
   </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
 </c-carousel>

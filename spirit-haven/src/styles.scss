@@ -33,6 +33,7 @@ $spirit-haven-theme: mat.define-light-theme((color: (primary: $spirit-haven-prim
 
 app-root {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
 }
