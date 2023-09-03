@@ -22,11 +22,9 @@
 
     <div class="col content">
       <h4>{{event.title}}</h4>
-      <ng-container *ngFor="let p of event.content; let first = first; let last = last;">
+      <ng-container>
         <p>
-          <span *ngIf="first && event.author">"</span>
-          {{p.trim()}}
-          <span *ngIf="last && event.author">"</span>
+          <span *ngIf="event.author">"</span>{{event.content}}<span *ngIf="event.author">"</span>
         </p>
       </ng-container>
       <p *ngIf="event.author">

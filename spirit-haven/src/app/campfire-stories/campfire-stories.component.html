@@ -30,11 +30,9 @@
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <ng-container *ngFor="let p of event.content; let first = first; let last = last;">
+          <ng-container>
             <p>
-              <span *ngIf="first">"</span>
-              {{p.trim()}}
-              <span *ngIf="last">"</span>
+              <span>"</span>{{event.content.trim()}}<span>"</span>
             </p>
           </ng-container>
         </mat-card-content>
