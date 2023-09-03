@@ -9,7 +9,6 @@ c-carousel-item,
 }
 
 app-countdown {
-  // border: 1px solid hotpink;
   position: absolute;
   z-index: 1000;
   width: 100%;
@@ -17,9 +16,10 @@ app-countdown {
 
 c-carousel-caption {
   text-align: unset;
+  height: fit-content;
   right: 50%;
   left: 7%;
-  bottom: 20%;
+  top: 50%;
 }
 
 c-carousel-item .img-fluid {
@@ -39,7 +39,7 @@ c-carousel-item .img-fluid {
 .wrapper h1,
 .wrapper h5 {
   color: $white;
-  white-space: pre;
+  white-space: pre-line;
 }
 
 .wrapper h1 {
@@ -50,9 +50,4 @@ c-carousel-item .img-fluid {
 .wrapper h5 {
   font-family: 'Open Sans Variable', sans-serif;
   font-weight: 400;
-}
-
-.slide-text {
-  margin: 17% 0 0 7%;
-  padding: unset;
 }
