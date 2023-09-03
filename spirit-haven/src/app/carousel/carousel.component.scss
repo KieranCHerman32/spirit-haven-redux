@@ -1,0 +1,51 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
+$min: 600px;
+$min-inset: calc($min / 4);
+
+c-carousel-item,
+.wrapper {
+  height: $min;
+}
+
+app-countdown {
+  // border: 1px solid hotpink;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+c-carousel-item .img-fluid {
+  object-fit: cover;
+}
+
+.wrapper {
+  position: relative;
+  background-color: #5B479575;
+}
+
+.bg {
+  position: relative;
+  background-color: $black;
+}
+
+.wrapper h1,
+.wrapper h5 {
+  color: $white;
+  white-space: pre;
+}
+
+.wrapper h1 {
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper h5 {
+  font-family: 'Open Sans Variable', sans-serif;
+  font-weight: 400;
+}
+
+.slide-text {
+  margin: 17% 0 0 7%;
+  padding: unset;
+}

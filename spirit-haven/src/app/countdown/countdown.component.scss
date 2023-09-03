@@ -1,0 +1,15 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
+
+.row {
+  // border: dashed 1px hotpink;
+}
+
+.col {
+  // border: solid 1px hotpink;
+}
+
+.logo {
+  filter: brightness(0) invert(1);
+  margin: 12.5%;
+}

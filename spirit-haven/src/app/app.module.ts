@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from '@coreui/angular';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -24,11 +25,14 @@ import { BurnBannerComponent } from './burn-banner/burn-banner.component';
 import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
 import { FooterComponent } from './footer/footer.component';
 import { HistoryComponent } from './history/history.component';
+import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { TimelineComponent } from './timeline/timeline.component';
     HistoryComponent,
     CampfireStoriesComponent,
     TimelineComponent,
+    HomeComponent,
+    CarouselComponent,
+    CountdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +66,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     MatListModule,
     MatExpansionModule,
     MatCardModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
