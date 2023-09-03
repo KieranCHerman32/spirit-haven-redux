@@ -2,13 +2,13 @@
   <app-countdown></app-countdown>
 </ng-container>
 
-<c-carousel [animate]="false" transition="crossfade" [interval]="5000" pause="hover" [touch]="true">
+<c-carousel [animate]="true" transition="crossfade" [interval]="5000" pause="hover" [touch]="true">
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of slides">
       <img priority fill class="img-fluid" [ngSrc]="slide.src" />
       <div class="wrapper">
         <div class="row">
-          <div class="col">
+          <div class="col slide-text">
             <h1>{{slide.title}}</h1>
             <h5>{{slide.subtitle}}</h5>
           </div>

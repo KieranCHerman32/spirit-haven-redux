@@ -9,7 +9,7 @@ c-carousel-item,
 }
 
 app-countdown {
-  border: 1px solid hotpink;
+  // border: 1px solid hotpink;
   position: absolute;
   z-index: 1000;
   width: 100%;
@@ -36,9 +36,15 @@ c-carousel-item .img-fluid {
 
 .wrapper h1 {
   font-size: 2.75rem;
+  margin-bottom: 2rem;
 }
 
 .wrapper h5 {
   font-family: 'Open Sans Variable', sans-serif;
   font-weight: 400;
+}
+
+.slide-text {
+  margin: 17% 0 0 7%;
+  padding: unset;
 }
