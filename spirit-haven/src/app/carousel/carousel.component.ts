@@ -16,7 +16,7 @@ export class SlideShow {
       src: '../../assets/jpg/grandmothers-right.jpg',
       title: 'Come home.',
       subtitle:
-        'Our 100+ acre ranch is where we come together to celebrate as a community.AIts name is Spirit Haven Ranch, but we prefer to call it home.',
+        'Our 100+ acre ranch is where we come together to celebrate as a community.\nIts name is Spirit Haven Ranch, but we prefer to call it home.',
     },
     {
       src: '../../assets/jpg/revel-wide.jpg',
@@ -34,7 +34,7 @@ export class SlideShow {
       src: '../../assets/jpg/altar.jpg',
       title: 'Discover your path.',
       subtitle:
-        'Spirit Haven is made up of rich, diverse practices and traditions. AGo to a workshop or strike up a conversation with just about anyone to learn something new.',
+        'Spirit Haven is made up of rich, diverse practices and traditions. \nGo to a workshop or strike up a conversation with just about anyone to learn something new.',
     },
     {
       src: '../../assets/jpg/lothlorien_path.jpg',
