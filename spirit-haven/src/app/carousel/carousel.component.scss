@@ -15,6 +15,13 @@ app-countdown {
   width: 100%;
 }
 
+c-carousel-caption {
+  text-align: unset;
+  right: 50%;
+  left: 7%;
+  bottom: 20%;
+}
+
 c-carousel-item .img-fluid {
   object-fit: cover;
 }
