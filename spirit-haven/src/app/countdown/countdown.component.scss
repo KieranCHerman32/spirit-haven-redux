@@ -1,17 +1,92 @@
 @import '../../spirit-haven-pallette.scss';
 @import '../../spirit-haven-typography.scss';
+$min: 600px;
+$min-inset: calc($min / 4);
 
 .row {
-  // border: dashed 1px hotpink;
+  width: 100%;
 }
 
-.col {
-  // border: solid 1px hotpink;
+.col:has(mat-card) {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .logo {
   position: relative;
   filter: brightness(0) invert(1);
   left: 12.75%;
-  top: 64%;
+  top: 20%;
+}
+
+.wrapper {
+  min-height: $min;
+}
+
+.countdown-wrapper {
+  padding: unset;
+}
+
+.countdown-element {
+  display: inline;
+  padding-right: 2em;
+}
+
+.countdown-digit {
+  font-size: 2.75em;
+  font-weight: 700;
+}
+
+.countdown-label {
+  font-size: 1em;
+}
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $blue-magenta-violet;
+  width: 100%;
+}
+
+mat-card {
+  height: 60%;
+  margin-right: 13.25%;
+  margin-left: 13%;
+  justify-content: space-evenly;
+  background-color: $sh-teal;
+  color: $white;
+  border-radius: 20px;
+  box-shadow:
+    0px 5px 5px -3px rgba(44, 179, 188, 0.2),
+    0px 8px 10px 1px rgba(44, 179, 188, 0.14),
+    0px 3px 14px 2px rgba(44, 179, 188, 0.12) !important;
+}
+
+mat-card-content {
+  padding: 2rem 2rem 0rem !important;
+}
+
+mat-card-actions {
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+h1,
+h2,
+p {
+  padding: unset;
+  margin: unset;
+}
+
+h1,
+p {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.75em;
+  font-weight: 600;
 }
