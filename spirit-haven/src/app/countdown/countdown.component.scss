@@ -4,7 +4,7 @@ $min: 600px;
 $min-inset: calc($min / 4);
 
 .row {
-  // border: dashed 1px hotpink;
+  width: 100%;
 }
 
 .col:has(mat-card) {
@@ -37,17 +37,24 @@ $min-inset: calc($min / 4);
 
 .countdown-digit {
   font-size: 2.75em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .countdown-label {
   font-size: 1em;
 }
 
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $blue-magenta-violet;
+  width: 100%;
+}
+
 mat-card {
   height: 60%;
   margin-right: 13.25%;
   margin-left: 13%;
+  justify-content: space-evenly;
   background-color: $sh-teal;
   color: $white;
   border-radius: 20px;
@@ -58,7 +65,12 @@ mat-card {
 }
 
 mat-card-content {
-  padding: 2rem !important;
+  padding: 2rem 2rem 0rem !important;
+}
+
+mat-card-actions {
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
 h1,
