@@ -23,6 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BurnBannerComponent } from './burn-banner/burn-banner.component';
 import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CountdownComponent } from './countdown/countdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
@@ -31,8 +33,6 @@ import { PrincipleDividerComponent } from './principle-divider/principle-divider
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   declarations: [
