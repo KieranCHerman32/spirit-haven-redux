@@ -1,8 +1,8 @@
 export interface TimeComponents {
-  secondsToEnd: number;
-  minutesToEnd: number;
-  hoursToEnd: number;
-  daysToEnd: number;
+  secondsToEnd: string;
+  minutesToEnd: string;
+  hoursToEnd: string;
+  daysToEnd: string;
 }
 
 export function calcDateDiff(end: Date = new Date(2022, 0, 1)): TimeComponents {
@@ -18,21 +18,30 @@ export function calcDateDiff(end: Date = new Date(2022, 0, 1)): TimeComponents {
   const daysToEnd = Math.floor(
     timeDifference /
       (milliSecondsInASecond * minutesInAnHour * secondsInAMinute * hoursInADay)
-  );
+  )
+    .toString()
+    .padStart(2, '0');
 
   const hoursToEnd = Math.floor(
     (timeDifference /
       (milliSecondsInASecond * minutesInAnHour * secondsInAMinute)) %
       hoursInADay
-  );
+  )
+    .toString()
+    .padStart(2, '0');
 
   const minutesToEnd = Math.floor(
     (timeDifference / (milliSecondsInASecond * minutesInAnHour)) %
       secondsInAMinute
-  );
+  )
+    .toString()
+    .padStart(2, '0');
 
-  const secondsToEnd =
-    Math.floor(timeDifference / milliSecondsInASecond) % secondsInAMinute;
+  const secondsToEnd = (
+    Math.floor(timeDifference / milliSecondsInASecond) % secondsInAMinute
+  )
+    .toString()
+    .padStart(2, '0');
 
   return { secondsToEnd, minutesToEnd, hoursToEnd, daysToEnd };
 }
