@@ -1,0 +1,30 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
+
+mat-card {
+  margin: 2rem 0;
+  padding: .5em;
+  background-color: $sh-purple;
+  border-radius: 20px;
+}
+
+p,
+h2,
+h3,
+mat-card {
+  color: $white;
+}
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $sh-teal;
+  width: 25%;
+}
+
+.mat-mdc-card-header,
+.mat-mdc-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

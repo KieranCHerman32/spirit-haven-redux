@@ -1,1 +1,130 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
 
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#collage-row {
+  margin: 7% 11% 11%;
+}
+
+.text {
+  margin: 5% 0;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-purple {
+  color: $sh-purple;
+}
+
+.text-dark-purple {
+  color: $sh-text-dark-purple;
+}
+
+.img-fluid.info-img {
+  object-fit: cover;
+}
+
+.info-row>.col {
+  position: relative;
+}
+
+.text>.row {
+  padding: 0 10rem;
+}
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $blue-magenta-violet;
+  width: 25%;
+  margin-top: 2em;
+}
+
+// mat-card::ng-deep p,
+// mat-card::ng-deep h1,
+// mat-card::ng-deep ul {
+//   border: 1px solid hotpink;
+// }
+
+mat-card {
+  border-radius: 20px;
+  border-top: .25rem solid $sh-teal;
+  font-size: 1.25rem;
+  margin: 0 2.5rem;
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin: 2rem 0;
+}
+
+p,
+h1,
+h2,
+h3 {
+  padding: unset;
+}
+
+li {
+  margin-left: 2rem;
+}
+
+#teal-btn {
+  background-color: $sh-teal;
+}
+
+#workend-pic {
+  object-position: 0% 65%;
+}
+
+#festival-pic {
+  object-position: 0% 25%;
+}
+
+#sacred-space-pic {
+  object-fit: none;
+  zoom: 67%;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+}
+
+#flame {
+  align-self: end;
+  position: relative;
+  left: -20%;
+  bottom: -15%
+}
+
+#sh-purple {
+  background-color: $sh-purple;
+}
+
+#sh-dark-purple {
+  background-color: $sh-text-dark-purple;
+}
+
+#sh-purple-25 {
+  background-color: $sh-purple-25;
+}
+
+#sh-dark-purple,
+#sh-purple-25 {
+  padding: 5%;
+}
+
+#collage>.img-fluid {
+  border-radius: 2%;
+}
+
+#collage.col {
+  display: flex;
+}
