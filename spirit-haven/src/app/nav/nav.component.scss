@@ -1,8 +1,13 @@
 @import '../../spirit-haven-pallette.scss';
 @import '../../spirit-haven-typography.scss';
 
-.col {
-  max-width: min-content;
+.col-1 {
+  padding: unset;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .row {
@@ -17,6 +22,33 @@
 .end {
   justify-content: flex-end;
   display: inline-flex;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-menu.show {
+  padding: unset;
+  border: none;
+  border-radius: unset;
+}
+
+.dropdown-item,
+.dropdown-header,
+.btn {
+  padding: .5rem;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.btn,
+.btn.show,
+.btn:hover,
+.btn:active {
+  border: none !important;
 }
 
 img {
@@ -35,27 +67,61 @@ mat-toolbar {
   padding: 1em;
 }
 
-::ng-deep.mat-mdc-menu-content {
-  padding: 0 !important;
-}
-
-::ng-deep.mat-elevation-z8,
-.mat-mdc-elevation-specific.mat-elevation-z8 {
-  box-shadow:
-    0px 5px 5px -3px rgba(50, 40, 90, 0.2),
-    0px 8px 10px 1px rgba(50, 40, 90, 0.14),
-    0px 3px 14px 2px rgba(50, 40, 90, 0.12) !important;
-}
-
 .mat-mdc-fab,
 .mat-mdc-mini-fab {
   background-color: $blue-magenta-violet;
 }
 
-::ng-deep .mat-mdc-menu-panel.mat-mdc-menu-panel {
-  top: calc(1.25em);
-}
-
 #logo-fix {
   margin-right: 6.25rem;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+}
+
+a,
+.hover {
+  color: $sh-purple;
+}
+
+a:not(.active)::after,
+.hover:not(.active)::after {
+  display: block;
+  content: '';
+  position: relative;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: $sh-teal;
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+}
+
+a:not(.active):hover::after,
+.hover:not(.active):hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+a:not(.active):hover,
+.hover:not(.active):hover {
+  color: $sh-teal;
+  transition: color .125s ease-out;
+}
+
+.hover.active,
+.btn.active {
+  color: $sh-teal;
+}
+
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: $sh-teal;
+  background-color: $white;
 }
