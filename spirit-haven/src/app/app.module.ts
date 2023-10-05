@@ -35,6 +35,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TimelineComponent } from './timeline/timeline.component';
 import { CollageComponent } from './collage/collage.component';
 import { TriptychComponent } from './triptych/triptych.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { TriptychComponent } from './triptych/triptych.component';
     CountdownComponent,
     CollageComponent,
     TriptychComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
