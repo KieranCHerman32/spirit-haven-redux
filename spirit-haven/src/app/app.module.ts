@@ -36,6 +36,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { CollageComponent } from './collage/collage.component';
 import { TriptychComponent } from './triptych/triptych.component';
 import { HeaderComponent } from './header/header.component';
+import { CommunityComponent } from './community/community.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { HeaderComponent } from './header/header.component';
     CollageComponent,
     TriptychComponent,
     HeaderComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,
