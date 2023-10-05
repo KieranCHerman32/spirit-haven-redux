@@ -91,7 +91,6 @@ export class NavComponent implements OnInit {
 
   hover() {
     let hover: boolean = false;
-
     this.hoverList.forEach((el) => {
       if (el.matches(':hover')) {
         hover = true;
