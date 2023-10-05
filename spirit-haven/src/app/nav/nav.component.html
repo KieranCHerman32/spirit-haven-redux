@@ -3,7 +3,7 @@
   </app-burn-banner>
 </ng-container>
 
-<mat-toolbar>
+<mat-toolbar (mouseleave)="closeAll()" (mouseover)="hover()">
   <div class="row align-items-center no-gutters w-100">
     <div class="col-lg" id="logo-fix">
       <img priority class="img-fluid" ngSrc="../../assets/png/logo-text-purple.png"
@@ -14,19 +14,20 @@
 
     <!-- Visible to ALL -->
     <div class="col-1">
-      <button class="btn" type="button">
+      <a class="btn" type="button">
         <span class="hover" routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>
-      </button>
+      </a>
     </div>
 
     <ng-container>
-      <div class="col-1">
+      <div class="col-1" (mouseover)="openDropdown('community')">
         <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button id="community" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false">
             <span class="hover">Community</span>
           </button>
 
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('community')">
             <li>
               <h6 class="dropdown-header">Click again to go to Community</h6>
             </li>
@@ -45,11 +46,13 @@
 
     <ng-container>
       <div class="col-1">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown" (mouseover)="openDropdown('festival')">
+          <button id="festival" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false">
             <span class="hover">Festivals</span>
           </button>
-          <ul class="dropdown-menu">
+
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('festival')">
             <li>
               <h6 class="dropdown-header">Click again to go to Festivals</h6>
             </li>
@@ -64,32 +67,31 @@
 
     <ng-container>
       <div class="col-1">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown" (mouseover)="openDropdown('ranch')">
+          <button id="ranch" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false">
             <span class="hover">Spirit Haven Ranch</span>
           </button>
-          <div class="col-1">
 
-            <ul class="dropdown-menu">
-              <li>
-                <h6 class="dropdown-header">Click again to go to Spirit Haven Ranch</h6>
-              </li>
-              <li><a class="dropdown-item" routerLink="" routerLinkActive="active"
-                   ariaCurrentWhenActive="page">WorkEnds</a></li>
-              <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Hosting
-                  at Spirit Haven Ranch</a></li>
-              <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Sacred
-                  Spaces Directory</a></li>
-            </ul>
-          </div>
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('ranch')">
+            <li>
+              <h6 class="dropdown-header">Click again to go to Spirit Haven Ranch</h6>
+            </li>
+            <li><a class="dropdown-item" routerLink="" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">WorkEnds</a></li>
+            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Hosting
+                at Spirit Haven Ranch</a></li>
+            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Sacred
+                Spaces Directory</a></li>
+          </ul>
         </div>
       </div>
     </ng-container>
 
     <div class="col-1">
-      <button class="btn hover" type="button">
+      <a class="btn hover" type="button">
         <span routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</span>
-      </button>
+      </a>
     </div>
 
     <div class="col-lg end">
