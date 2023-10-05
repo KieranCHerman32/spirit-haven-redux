@@ -1,5 +1,5 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material/menu';
+import { Component, OnInit } from '@angular/core';
+import * as bootstrap from 'bootstrap';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -7,32 +7,98 @@ import { environment } from 'src/environments/environment';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
   env = environment;
   memberAuth: any;
 
-  @ViewChildren(MatMenuTrigger)
-  triggerArr!: QueryList<MatMenuTrigger>;
+  hoverList!: NodeListOf<Element>;
+  dropdownElementList!: NodeListOf<Element>;
+  dropdownInstanceList!: bootstrap.Dropdown[];
+  communityDropdown!: bootstrap.Dropdown;
+  festivalDropdown!: bootstrap.Dropdown;
+  ranchDropdown!: bootstrap.Dropdown;
 
-  menuOpen(menuTrigger: MatMenuTrigger) {
-    if (!menuTrigger.menuOpen) {
-      this.menuCloseAll(menuTrigger);
-      setTimeout(() => menuTrigger.openMenu(), 100);
+  ngOnInit(): void {
+    const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+    const dropdownList = [...dropdownElementList].map((dropdownToggleEl) => {
+      this.dropdownInit(dropdownToggleEl);
+    });
+  }
+
+  dropdownInit(element: Element) {
+    const id = element.id;
+    // TODO: Find a cleaner way to implement this.
+    switch (id) {
+      case 'community':
+        this.communityDropdown =
+          bootstrap.Dropdown.getOrCreateInstance(element);
+        break;
+      case 'festival':
+        this.festivalDropdown = bootstrap.Dropdown.getOrCreateInstance(element);
+        break;
+      case 'ranch':
+        this.ranchDropdown = bootstrap.Dropdown.getOrCreateInstance(element);
+        break;
+      default:
+        break;
+    }
+
+    if (this.communityDropdown && this.festivalDropdown && this.ranchDropdown) {
+      console.log('Initializing dropdownInstanceList');
+      this.dropdownInstanceList = [
+        this.communityDropdown,
+        this.festivalDropdown,
+        this.ranchDropdown,
+      ];
+
+      this.hoverList = document.querySelectorAll(
+        '.btn, .dropdown-toggle, .dropdown-menu, .dropdown-header, .dropdown-item'
+      );
     }
   }
 
-  menuClose(menuTrigger: MatMenuTrigger) {
-    if (!menuTrigger.menuOpen) {
-      this.menuCloseAll(menuTrigger);
-      menuTrigger.closeMenu();
+  selectInstance(id: string) {
+    switch (id) {
+      case 'community':
+        return this.communityDropdown;
+      case 'festival':
+        return this.festivalDropdown;
+      case 'ranch':
+        return this.ranchDropdown;
+      default:
+        return;
     }
   }
 
-  menuCloseAll(menuTrigger?: MatMenuTrigger) {
-    for (const trigger of this.triggerArr) {
-      if (!menuTrigger || trigger !== menuTrigger) {
-        trigger.closeMenu();
+  openDropdown(id: string) {
+    this.closeAll(id);
+    const el = this.selectInstance(id);
+    el?.show();
+  }
+
+  closeDropdown(id: string) {
+    const el = this.selectInstance(id);
+    el?.hide();
+  }
+
+  closeAll(excludeId?: string) {
+    this.dropdownInstanceList.forEach((dropdown) => {
+      if (!excludeId || dropdown != this.selectInstance(excludeId)) {
+        dropdown.hide();
       }
+    });
+  }
+
+  hover() {
+    let hover: boolean = false;
+    this.hoverList.forEach((el) => {
+      if (el.matches(':hover')) {
+        hover = true;
+      }
+    });
+
+    if (!hover) {
+      this.closeAll();
     }
   }
 }

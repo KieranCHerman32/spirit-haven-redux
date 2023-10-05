@@ -1,104 +1,167 @@
 <ng-container *ngIf="env.burn_ban_in_effect">
-  <app-burn-banner></app-burn-banner>
+  <app-burn-banner>
+  </app-burn-banner>
 </ng-container>
 
-<mat-toolbar>
+<mat-toolbar (mouseleave)="closeAll()" (mouseover)="hover()">
   <div class="row align-items-center no-gutters w-100">
     <div class="col-lg" id="logo-fix">
-      <img priority class="img-fluid" ngSrc="../../assets/png/logo-text-purple.png"
-           alt="Spirit Haven Typographical Logo" height="50" width="433.5" routerLink="" (mouseenter)="menuCloseAll()">
-      <!-- Spirit Haven Logo Text -->
+      <img priority class="img-fluid" ngSrc="../../assets/png/logo-text-purple.png">
+      < alt="Spirit Haven Typographical Logo" height="50" width="433.5" routerLink="" routerLinkActive="active"
+        ariaCurrentWhenActive="page">
+        <!-- Spirit Haven Logo Text -->
     </div>
 
     <!-- Visible to ALL -->
-    <div class="col">
-      <button mat-button routerLink="about" (mouseenter)="menuCloseAll()">About</button>
+    <div class="col-1">
+      <a class="btn" type="button">
+        <span class="hover" routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>
+      </a>
     </div>
 
     <ng-container>
-      <div class="col">
-        <button mat-button routerLink="" #communityTrigger="matMenuTrigger" [matMenuTriggerFor]="community"
-                (mouseenter)="menuOpen(communityTrigger)">
-          Community
-        </button>
-      </div>
+      <div class="col-1" (mouseover)="openDropdown('community')">
+        <div class="dropdown">
+          <button id="community" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="community"
+                  routerLinkActive="active" ariaCurrentWhenActive="page">
+            <span class="hover">Community</span>
+          </button>
 
-      <mat-menu #community="matMenu" [hasBackdrop]="false">
-        <span (mouseleave)="communityTrigger.closeMenu()">
-          <button mat-menu-item routerLink="">Membership</button>
-          <button mat-menu-item routerLink="">Governance</button>
-          <button mat-menu-item routerLink="">Policies</button>
-          <button mat-menu-item routerLink="">Shop</button>
-        </span>
-      </mat-menu>
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('community')">
+            <li>
+              <h6 class="dropdown-header">Click above to go to Community</h6>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/membership" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Membership
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/governance" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Governance
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/policies" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Policies
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/merchandise" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Merchandise
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </ng-container>
 
     <ng-container>
-      <div class="col">
-        <button mat-button routerLink="" #festivalTrigger="matMenuTrigger" [matMenuTriggerFor]="festivals"
-                (mouseenter)="menuOpen(festivalTrigger)">
-          Festivals
-        </button>
-      </div>
+      <div class="col-1">
+        <div class="dropdown" (mouseover)="openDropdown('festival')">
+          <button id="festival" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="festivals"
+                  routerLinkActive="active" ariaCurrentWhenActive="page">
+            <span class="hover">Festivals</span>
+          </button>
 
-      <mat-menu #festivals="matMenu" [hasBackdrop]="false">
-        <span (mouseleave)="festivalTrigger.closeMenu()">
-          <button mat-menu-item routerLink="">Samhain 2023</button>
-          <button mat-menu-item routerLink="">Vending at Festivals</button>
-        </span>
-      </mat-menu>
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('festival')">
+            <li>
+              <h6 class="dropdown-header">Click above to go to Festivals</h6>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="festivals/samhain-2023" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Samhain 2023
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="festivals/vending-at-festivals" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Vending at Festivals
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </ng-container>
 
     <ng-container>
-      <div class="col">
-        <button mat-button routerLink="" #ranchTrigger="matMenuTrigger" [matMenuTriggerFor]="ranch"
-                (mouseenter)="menuOpen(ranchTrigger)">
-          Ranch
-        </button>
-      </div>
+      <div class="col-1">
+        <div class="dropdown" (mouseover)="openDropdown('ranch')">
+          <button id="ranch" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="ranch"
+                  routerLinkActive="active" ariaCurrentWhenActive="page">
+            <span class="hover">Spirit Haven Ranch</span>
+          </button>
 
-      <mat-menu #ranch="matMenu" [hasBackdrop]="false">
-        <span (mouseleave)="ranchTrigger.closeMenu()">
-          <button mat-menu-item routerLink="">WorkEnds</button>
-          <button mat-menu-item routerLink="">Hosting at Spirit Haven Ranch</button>
-          <button mat-menu-item routerLink="">Sacred Spaces Directory</button>
-        </span>
-      </mat-menu>
+          <ul class="dropdown-menu" (mouseleave)="closeDropdown('ranch')">
+            <li>
+              <h6 class="dropdown-header">Click above to go to Spirit Haven Ranch</h6>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/workends" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                WorkEnds
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/hosting-at-shr" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Hosting at Spirit Haven Ranch
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/sacred-spaces" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Sacred Spaces Directory
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </ng-container>
 
-    <div class="col">
-      <button mat-button routerLink="" (mouseenter)="menuCloseAll()">Contact</button>
+    <div class="col-1">
+      <a class="btn hover" type="button">
+        <span routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</span>
+      </a>
     </div>
 
     <div class="col-lg end">
-      <button mat-icon-button="" routerLink="" (mouseenter)="menuCloseAll()">
+      <button mat-icon-button="">
         <mat-icon>search</mat-icon>
       </button>
     </div>
 
     <ng-container *ngIf="memberAuth; else login">
-      <div class="col">
+      <div class="col-1">
         <!-- Visible to Members Regardless of Membership Status -->
-        <button mat-icon-button #accountTrigger="matMenuTrigger" [matMenuTriggerFor]="account"
-                (mouseenter)="menuOpen(accountTrigger)">
+        <button mat-icon-button #accountTrigger="matMenuTrigger" [matMenuTriggerFor]="account">
           <mat-icon>person</mat-icon>
         </button>
       </div>
 
       <mat-menu #account="matMenu" [hasBackdrop]="false">
-        <span (mouseleave)="accountTrigger.closeMenu()">
-          <button mat-menu-item routerLink="" disabled>{{memberAuth.prefName}}</button>
-          <mat-divider></mat-divider>
-          <button mat-menu-item routerLink="">Account</button>
-          <button *ngIf="memberAuth.active" mat-menu-item routerLink="">Dashboard</button>
-          <button mat-menu-item routerLink="">Logout</button>
-        </span>
+        <button mat-menu-item ariaCurrentWhenActive="page" disabled>{{memberAuth.prefName}}</button>
+        <mat-divider>
+        </mat-divider>
+        <button mat-menu-item routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Account</button>
+        <button *ngIf="memberAuth.active" mat-menu-item routerLink="" routerLinkActive="active"
+                ariaCurrentWhenActive="page">Dashboard</button>
+        <button mat-menu-item routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Logout</button>
       </mat-menu>
     </ng-container>
 
     <ng-template #login>
-      <div class="col">
-        <button mat-fab extended routerLink="">Login / Register</button>
+      <div class="col-1">
+        <button mat-fab extended routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Login /
+          Register</button>
       </div>
     </ng-template>
   </div>
