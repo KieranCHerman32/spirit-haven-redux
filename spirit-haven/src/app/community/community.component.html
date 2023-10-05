@@ -1,1 +1,44 @@
-<p>community works!</p>
+<app-header [pageTitle]="'Community'" [headerImg]="'../../assets/jpg/revel-wide.jpg'"
+            [position]="'50% 45%'"></app-header>
+
+<div class="container">
+  <div id="get-involved" class="row">
+    <div class="row text-center align-items-center">
+      <h1>Ways to get involved</h1>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button mat-fab extended routerLink="community#membership">
+          Become a Member
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="community-service" queryParamsHandling="merge">
+          Festival Community Service
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="join-a-team" queryParamsHandling="merge">
+          Join a Volunteer Team
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="workends" queryParamsHandling="merge">
+          Visit a WorkEnd
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="area" queryParamsHandling="merge">
+          Join your local Area
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="donate" queryParamsHandling="merge">
+          Donate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@import '../../spirit-haven-pallette.scss';
+@import '../../spirit-haven-typography.scss';
+
+h1 {
+  font-size: 2.75rem;
+  color: $sh-purple;
+  padding: unset;
+  padding-bottom: 3rem;
+  margin: unset;
+}
+
+.row {
+  padding: 0 1rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-3 {
+  padding: 1rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $sh-purple;
+  width: 100%;
+}
+
+#get-involved {
+  padding: 5rem;
+}
+
+#test {
+  height: 100vh;
+}
