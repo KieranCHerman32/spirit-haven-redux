@@ -6,10 +6,10 @@
 <mat-toolbar (mouseleave)="closeAll()" (mouseover)="hover()">
   <div class="row align-items-center no-gutters w-100">
     <div class="col-lg" id="logo-fix">
-      <img priority class="img-fluid" ngSrc="../../assets/png/logo-text-purple.png"
-           alt="Spirit Haven Typographical Logo" height="50" width="433.5" routerLink="" routerLinkActive="active"
-           ariaCurrentWhenActive="page">
-      <!-- Spirit Haven Logo Text -->
+      <img priority class="img-fluid" ngSrc="../../assets/png/logo-text-purple.png">
+      < alt="Spirit Haven Typographical Logo" height="50" width="433.5" routerLink="" routerLinkActive="active"
+        ariaCurrentWhenActive="page">
+        <!-- Spirit Haven Logo Text -->
     </div>
 
     <!-- Visible to ALL -->
@@ -32,14 +32,30 @@
             <li>
               <h6 class="dropdown-header">Click above to go to Community</h6>
             </li>
-            <li><a class="dropdown-item" routerLink="community/membership" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">Membership</a></li>
-            <li><a class="dropdown-item" routerLink="community/governance" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">Governance</a></li>
-            <li><a class="dropdown-item" routerLink="community/policies" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">Policies</a></li>
-            <li><a class="dropdown-item" routerLink="community/merchandise" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">Merchandise</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="community/membership" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Membership
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/governance" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Governance
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/policies" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Policies
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="community/merchandise" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Merchandise
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -49,7 +65,7 @@
       <div class="col-1">
         <div class="dropdown" (mouseover)="openDropdown('festival')">
           <button id="festival" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="festival"
+                  data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="festivals"
                   routerLinkActive="active" ariaCurrentWhenActive="page">
             <span class="hover">Festivals</span>
           </button>
@@ -58,10 +74,18 @@
             <li>
               <h6 class="dropdown-header">Click above to go to Festivals</h6>
             </li>
-            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Samhain
-                2023</a></li>
-            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Vending at
-                Festivals</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="festivals/samhain-2023" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Samhain 2023
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="festivals/vending-at-festivals" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Vending at Festivals
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -80,12 +104,24 @@
             <li>
               <h6 class="dropdown-header">Click above to go to Spirit Haven Ranch</h6>
             </li>
-            <li><a class="dropdown-item" routerLink="" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">WorkEnds</a></li>
-            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Hosting
-                at Spirit Haven Ranch</a></li>
-            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Sacred
-                Spaces Directory</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/workends" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                WorkEnds
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/hosting-at-shr" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Hosting at Spirit Haven Ranch
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="ranch/sacred-spaces" routerLinkActive="active"
+                 ariaCurrentWhenActive="page">
+                Sacred Spaces Directory
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -113,7 +149,8 @@
 
       <mat-menu #account="matMenu" [hasBackdrop]="false">
         <button mat-menu-item ariaCurrentWhenActive="page" disabled>{{memberAuth.prefName}}</button>
-        <mat-divider></mat-divider>
+        <mat-divider>
+        </mat-divider>
         <button mat-menu-item routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Account</button>
         <button *ngIf="memberAuth.active" mat-menu-item routerLink="" routerLinkActive="active"
                 ariaCurrentWhenActive="page">Dashboard</button>
