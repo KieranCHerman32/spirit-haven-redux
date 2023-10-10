@@ -59,46 +59,7 @@
 <!-- Membership -->
 <ng-container>
   <div id="sh-dark-purple">
-    <mat-card>
-      <mat-card-content>
-        <div class="row">
-          <div class="col">
-            <div class="row"></div>
-            <div class="row text-purple">
-              <h3>Membership</h3>
-            </div>
-            <div class="row text-dark-purple">
-              <p>
-                A Spirit Haven membership ($30 for 12 months, $15 for 6 months) includes:
-              </p>
-              <ul>
-                <li>
-                  Voting for our Board of Directors
-                </li>
-                <li>
-                  Voting on policies and more at Great Works (business meetings)
-                </li>
-                <li>
-                  Ability to attend Festivals
-                </li>
-                <li>
-                  Ability to attend more than two WorkEnds in a year
-                </li>
-                <li>
-                  Sharing in an inclusive and diverse community
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col">
-            <app-triptych [content]="'membership'"></app-triptych>
-            <!-- TODO: Build Triptych as component -->
-            <!-- TODO: Triptych component should render vertical and horizontal -->
-            <!-- TODO: Triptych component should be used for any Triptych display on page -->
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <app-member-triptych></app-member-triptych>
   </div>
 </ng-container>
 
@@ -137,35 +98,8 @@
 
 <!-- Volunteer -->
 <ng-container>
-  <!-- TODO: Use Triptych component -->
   <div id="sh-purple-25">
-    <mat-card>
-      <mat-card-content>
-        <div class="row">
-          <div class="col">
-            <app-triptych [content]="'nav'"></app-triptych>
-            <!-- TODO: Build Triptych as component -->
-            <!-- TODO: Triptych component should render vertical and horizontal -->
-            <!-- TODO: Triptych component should be used for any Triptych display on page -->
-          </div>
-          <div class="col">
-            <div class="row"></div>
-            <div class="row text-purple">
-              <h3>Volunteer</h3>
-            </div>
-            <div class="row text-dark-purple">
-              <p>
-                Being an entirely volunteer-run organization with over 600 active members, it really takes a village.
-                Whether you're designing flyers, representing Spirit Haven at a local market, a frequent WorkEnder, or
-                running for the Board of Directors, there's a place for you! Getting hands-on with Spirit Haven is
-                incredibly rewarding - foster connections with new friends, get the warm fuzzies from giving back to
-                your community, and keep Spirit Haven running with various levels of volunteerism.
-              </p>
-            </div>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
+    <app-volunteer-triptych></app-volunteer-triptych>
   </div>
 </ng-container>
 
