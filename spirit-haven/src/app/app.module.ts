@@ -37,6 +37,8 @@ import { CollageComponent } from './collage/collage.component';
 import { TriptychComponent } from './triptych/triptych.component';
 import { HeaderComponent } from './header/header.component';
 import { CommunityComponent } from './community/community.component';
+import { MemberTriptychComponent } from './member-triptych/member-triptych.component';
+import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { CommunityComponent } from './community/community.component';
     TriptychComponent,
     HeaderComponent,
     CommunityComponent,
+    MemberTriptychComponent,
+    VolunteerTriptychComponent,
   ],
   imports: [
     BrowserModule,
