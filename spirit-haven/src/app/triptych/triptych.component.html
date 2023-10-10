@@ -1,6 +1,6 @@
 <ng-container>
-  <div [ngStyle]="{'flex-direction': direction}">
-    <mat-card *ngFor="let card of contentArr">
+  <div *ngFor="let card of contentArr" [ngClass]="dirClass != '' ? dirClass : 'row'">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>
           <h3>{{card.title}}</h3>

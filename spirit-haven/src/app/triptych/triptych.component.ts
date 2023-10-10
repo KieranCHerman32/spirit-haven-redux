@@ -7,7 +7,7 @@ import { TriptychContent } from '../types/TriptychContent';
   styleUrls: ['./triptych.component.scss'],
 })
 export class TriptychComponent implements OnInit {
-  @Input() direction = '';
+  @Input() dirClass = '';
   @Input() content = '';
   contentArr: TriptychContent[] = [];
 
@@ -22,6 +22,8 @@ export class TriptychComponent implements OnInit {
       default:
         break;
     }
+
+    console.log(this.dirClass);
   }
 }
 

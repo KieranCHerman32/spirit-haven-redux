@@ -5,7 +5,7 @@
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .text-purple {
@@ -27,7 +27,6 @@ mat-card {
   border-radius: $sh-radius;
   border-top: .25rem solid $sh-teal;
   font-size: 1.25rem;
-  margin: 0 2.5rem;
 }
 
 p,
