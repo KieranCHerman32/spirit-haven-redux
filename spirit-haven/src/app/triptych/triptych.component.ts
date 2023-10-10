@@ -14,10 +14,10 @@ export class TriptychComponent implements OnInit {
   ngOnInit(): void {
     switch (this.content.toLowerCase()) {
       case 'membership':
-        this.contentArr = ContentArr.memberContent;
+        this.contentArr = Content.memberContent;
         break;
       case 'nav':
-        this.contentArr = ContentArr.navContent;
+        this.contentArr = Content.navContent;
         break;
       default:
         break;
@@ -25,7 +25,7 @@ export class TriptychComponent implements OnInit {
   }
 }
 
-export class ContentArr {
+export class Content {
   static memberContent: TriptychContent[] = [
     {
       title: '6 Months',
