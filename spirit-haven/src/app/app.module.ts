@@ -39,6 +39,7 @@ import { HeaderComponent } from './header/header.component';
 import { CommunityComponent } from './community/community.component';
 import { MemberTriptychComponent } from './member-triptych/member-triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
+import { PanelSetComponent } from './panel-set/panel-set.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-tript
     CommunityComponent,
     MemberTriptychComponent,
     VolunteerTriptychComponent,
+    PanelSetComponent,
   ],
   imports: [
     BrowserModule,
