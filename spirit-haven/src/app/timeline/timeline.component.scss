@@ -1,5 +1,6 @@
-@import '../../spirit-haven-pallette.scss';
-@import '../../spirit-haven-typography.scss';
+@import '../../sh-pallette.scss';
+@import '../../sh-typography.scss';
+@import '../../sh-styles.scss';
 
 .container-fluid {
   width: 90%;
@@ -110,10 +111,7 @@ mat-icon.timeline-end {
 .content {
   background: $sh-purple;
   color: $white;
-  box-shadow:
-    0px 5px 5px -3px rgba(50, 40, 90, 0.2),
-    0px 8px 10px 1px rgba(50, 40, 90, 0.14),
-    0px 3px 14px 2px rgba(50, 40, 90, 0.12) !important;
+  box-shadow: none;
 }
 
 .content h4 {
@@ -122,7 +120,7 @@ mat-icon.timeline-end {
 
 .col.content {
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: $sh-radius;
   display: flex;
   flex-direction: column;
 }
@@ -150,7 +148,7 @@ p {
   position: absolute;
   left: calc(50% - 2px);
   width: 4px;
-  border-radius: 6px;
+  border-radius: $sh-radius;
   background: $sh-purple-25;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 <ng-container>
-  <div [ngStyle]="{'flex-direction': direction}">
-    <mat-card *ngFor="let card of contentArr">
+  <div *ngFor="let card of contentArr" [ngClass]="dirClass != '' ? dirClass : 'row'">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>
           <h3>{{card.title}}</h3>
@@ -10,7 +10,7 @@
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <button mat-fab extended [routerLink]="[card.nav]">Learn More</button>
+        <button mat-fab extended [routerLink]="[card.nav]">{{button}}</button>
       </mat-card-content>
     </mat-card>
   </div>

@@ -1,5 +1,6 @@
-@import '../../spirit-haven-pallette.scss';
-@import '../../spirit-haven-typography.scss';
+@import '../../sh-pallette.scss';
+@import '../../sh-typography.scss';
+@import '../../sh-styles.scss';
 
 .col {
   display: flex;
@@ -41,19 +42,13 @@
 
 .mat-mdc-fab,
 .mat-mdc-mini-fab {
-  background-color: $blue-magenta-violet;
+  background-color: $sh-purple;
   width: 25%;
   margin-top: 2em;
 }
 
-// mat-card::ng-deep p,
-// mat-card::ng-deep h1,
-// mat-card::ng-deep ul {
-//   border: 1px solid hotpink;
-// }
-
 mat-card {
-  border-radius: 20px;
+  border-radius: $sh-radius;
   border-top: .25rem solid $sh-teal;
   font-size: 1.25rem;
   margin: 0 2.5rem;
@@ -122,7 +117,7 @@ li {
 }
 
 #collage>.img-fluid {
-  border-radius: 20px;
+  border-radius: $sh-radius;
 }
 
 #collage.col {

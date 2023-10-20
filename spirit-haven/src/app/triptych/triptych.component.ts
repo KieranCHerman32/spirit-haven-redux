@@ -7,25 +7,30 @@ import { TriptychContent } from '../types/TriptychContent';
   styleUrls: ['./triptych.component.scss'],
 })
 export class TriptychComponent implements OnInit {
-  @Input() direction = '';
+  @Input() dirClass = '';
   @Input() content = '';
   contentArr: TriptychContent[] = [];
+  button: String = '';
 
   ngOnInit(): void {
     switch (this.content.toLowerCase()) {
       case 'membership':
-        this.contentArr = ContentArr.memberContent;
+        this.contentArr = Content.memberContent;
+        this.button = 'Sign Up';
         break;
       case 'nav':
-        this.contentArr = ContentArr.navContent;
+        this.contentArr = Content.navContent;
+        this.button = 'Learn More';
         break;
       default:
         break;
     }
+
+    console.log(this.dirClass);
   }
 }
 
-export class ContentArr {
+export class Content {
   static memberContent: TriptychContent[] = [
     {
       title: '6 Months',
@@ -39,7 +44,7 @@ export class ContentArr {
     },
     {
       title: 'Student Yearly',
-      subtitle: '$30 for 12 Months (+ Reduced Festival Attendance Rate)',
+      subtitle: '$30 for 12 Months\n(+ Reduced Festival Attendance Rate)',
       nav: '/membership/student-annual',
     },
   ];

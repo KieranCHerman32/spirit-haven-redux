@@ -1,5 +1,7 @@
-@import '../../spirit-haven-pallette.scss';
-@import '../../spirit-haven-typography.scss';
+@import '../../sh-pallette.scss';
+@import '../../sh-typography.scss';
+@import '../../sh-styles.scss';
+
 $min: 600px;
 $min-inset: calc($min / 4);
 
@@ -46,7 +48,7 @@ $min-inset: calc($min / 4);
 
 .mat-mdc-fab,
 .mat-mdc-mini-fab {
-  background-color: $blue-magenta-violet;
+  background-color: $sh-purple;
   width: 100%;
 }
 
@@ -57,11 +59,8 @@ mat-card {
   justify-content: space-evenly;
   background-color: $sh-teal;
   color: $white;
-  border-radius: 20px;
-  box-shadow:
-    0px 5px 5px -3px rgba(44, 179, 188, 0.2),
-    0px 8px 10px 1px rgba(44, 179, 188, 0.14),
-    0px 3px 14px 2px rgba(44, 179, 188, 0.12) !important;
+  border-radius: $sh-radius;
+  box-shadow: none;
 }
 
 mat-card-content {
