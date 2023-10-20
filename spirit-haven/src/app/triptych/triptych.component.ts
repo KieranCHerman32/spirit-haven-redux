@@ -10,14 +10,17 @@ export class TriptychComponent implements OnInit {
   @Input() dirClass = '';
   @Input() content = '';
   contentArr: TriptychContent[] = [];
+  button: String = '';
 
   ngOnInit(): void {
     switch (this.content.toLowerCase()) {
       case 'membership':
         this.contentArr = Content.memberContent;
+        this.button = 'Sign Up';
         break;
       case 'nav':
         this.contentArr = Content.navContent;
+        this.button = 'Learn More';
         break;
       default:
         break;
@@ -41,7 +44,7 @@ export class Content {
     },
     {
       title: 'Student Yearly',
-      subtitle: '$30 for 12 Months (+ Reduced Festival Attendance Rate)',
+      subtitle: '$30 for 12 Months\n(+ Reduced Festival Attendance Rate)',
       nav: '/membership/student-annual',
     },
   ];
