@@ -5,7 +5,7 @@
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .text-purple {
@@ -38,8 +38,33 @@ h1,
 h2,
 h3 {
   padding: unset;
+  margin: unset;
+}
+
+p {
+  font-size: 1rem;
 }
 
 li {
   margin-left: 2rem;
+}
+
+#member-child {
+  padding-left: 1rem;
+}
+
+#member-header {
+  margin: .25rem;
+}
+
+#main .col {
+  justify-content: center;
+}
+
+#main ::ng-deep mat-card {
+  margin: .75rem .5rem;
+}
+
+#alt ::ng-deep mat-card {
+  margin: 2rem .5rem;
 }
