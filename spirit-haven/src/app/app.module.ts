@@ -40,6 +40,7 @@ import { CommunityComponent } from './community/community.component';
 import { MemberTriptychComponent } from './member-triptych/member-triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
 import { PanelSetComponent } from './panel-set/panel-set.component';
+import { CommunityServiceComponent } from './community-service/community-service.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { PanelSetComponent } from './panel-set/panel-set.component';
     MemberTriptychComponent,
     VolunteerTriptychComponent,
     PanelSetComponent,
+    CommunityServiceComponent,
   ],
   imports: [
     BrowserModule,
