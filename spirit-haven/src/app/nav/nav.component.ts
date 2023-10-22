@@ -44,7 +44,6 @@ export class NavComponent implements OnInit {
     }
 
     if (this.communityDropdown && this.festivalDropdown && this.ranchDropdown) {
-      console.log('Initializing dropdownInstanceList');
       this.dropdownInstanceList = [
         this.communityDropdown,
         this.festivalDropdown,
