@@ -9,11 +9,19 @@ h1 {
   margin: unset;
 }
 
+app-community-service {
+  padding: unset;
+  margin: unset;
+}
+
 .row {
-  padding: 0 1rem;
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+#get-involved .row {
+  padding: 0 1rem;
 }
 
 .col-3 {

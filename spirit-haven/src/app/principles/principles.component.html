@@ -4,22 +4,5 @@
   </div>
 
   <div id="panels" class="col">
-    <h1>Our Principles</h1>
-    <ng-container *ngFor="let p of principles; let i = index">
-      <mat-expansion-panel hideToggle disabled>
-        <mat-expansion-panel-header (click)="togglePanel(i)">
-          <mat-panel-description>
-            <mat-icon>{{showToggle(i)}}</mat-icon>
-          </mat-panel-description>
-          <mat-panel-title>
-            {{p.nm}}
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p *ngFor="let p of p.desc">
-          {{p}}
-        </p>
-      </mat-expansion-panel>
-      <mat-divider *ngIf="showDivider(i)"></mat-divider>
-    </ng-container>
+    <app-panel-set [panelSetTitle]="'Our Principles'" [panelSetData]="principles"></app-panel-set>
   </div>
-</div>

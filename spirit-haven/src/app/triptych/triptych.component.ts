@@ -25,8 +25,6 @@ export class TriptychComponent implements OnInit {
       default:
         break;
     }
-
-    console.log(this.dirClass);
   }
 }
 

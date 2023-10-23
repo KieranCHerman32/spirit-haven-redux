@@ -1,0 +1,41 @@
+<h1>{{panelSetTitle}}</h1>
+<ng-container *ngFor="let p of panelSetData; let i = index">
+  <mat-expansion-panel hideToggle disabled>
+    <mat-expansion-panel-header (click)="togglePanel(i)">
+      <mat-panel-description>
+        <mat-icon>{{showToggle(i)}}</mat-icon>
+      </mat-panel-description>
+
+      <mat-panel-title>
+        {{p.title}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <ng-container *ngIf="p.desc">
+      <p *ngFor="let p of p.desc">
+        {{p}}
+      </p>
+    </ng-container>
+
+    <p *ngIf="p.contact && p.email">
+      {{p.contact}} <a [href]="mailTo(p.email)">{{p.email}}</a>
+    </p>
+    <p *ngIf="p.limited == true">
+      <i>Volunteer spots are limited.</i>
+    </p>
+
+    <ng-container *ngIf="p.special">
+      <p *ngFor="let p of p.special">
+        <b>{{p}}</b>
+      </p>
+    </ng-container>
+
+    <ng-container *ngIf="p.misc">
+      <p *ngFor="let p of p.misc">
+        <i>{{p}}</i>
+      </p>
+    </ng-container>
+
+  </mat-expansion-panel>
+  <mat-divider *ngIf="showDivider(i)"></mat-divider>
+</ng-container>
