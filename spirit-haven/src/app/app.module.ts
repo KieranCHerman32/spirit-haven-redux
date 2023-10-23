@@ -24,23 +24,23 @@ import { AppComponent } from './app.component';
 import { BurnBannerComponent } from './burn-banner/burn-banner.component';
 import { CampfireStoriesComponent } from './campfire-stories/campfire-stories.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CollageComponent } from './collage/collage.component';
+import { CommunityServiceComponent } from './community-service/community-service.component';
+import { CommunityComponent } from './community/community.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
+import { MemberTriptychComponent } from './member-triptych/member-triptych.component';
 import { NavComponent } from './nav/nav.component';
+import { PanelSetComponent } from './panel-set/panel-set.component';
 import { PrincipleDividerComponent } from './principle-divider/principle-divider.component';
 import { PrinciplesComponent } from './principles/principles.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { CollageComponent } from './collage/collage.component';
 import { TriptychComponent } from './triptych/triptych.component';
-import { HeaderComponent } from './header/header.component';
-import { CommunityComponent } from './community/community.component';
-import { MemberTriptychComponent } from './member-triptych/member-triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
-import { PanelSetComponent } from './panel-set/panel-set.component';
-import { CommunityServiceComponent } from './community-service/community-service.component';
 
 @NgModule({
   declarations: [
