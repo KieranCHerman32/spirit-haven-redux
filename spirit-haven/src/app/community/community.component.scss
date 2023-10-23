@@ -48,3 +48,29 @@ app-community-service {
   background-color: $sh-text-dark-purple;
   padding: 5%;
 }
+
+#join-a-team {
+  padding: 2rem 0;
+  background-color: $sh-teal-25;
+}
+
+#join-a-team h1,
+#join-a-team h5 {
+  color: $sh-purple;
+  padding: unset;
+}
+
+#join-a-team h5 {
+  margin-bottom: 1rem;
+}
+
+#info {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+#join-a-team p {
+  width: fit-content;
+  margin: 0.25rem 0 0;
+  padding: unset;
+}
