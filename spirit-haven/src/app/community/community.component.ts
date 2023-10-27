@@ -20,4 +20,8 @@ export class CommunityComponent implements OnInit {
       }
     });
   }
+
+  goToUrl(url: string) {
+    const newWindow = window.open(url, '_blank');
+  }
 }

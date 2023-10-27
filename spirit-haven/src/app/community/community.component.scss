@@ -4,7 +4,7 @@
 
 h1 {
   font-size: 2.75rem;
-  color: $sh-purple;
+  // color: $sh-purple;
   padding: unset;
   margin: 2rem 0;
 }
@@ -42,12 +42,16 @@ app-areas {
   min-width: min-content;
 }
 
+#donate .mat-mdc-fab,
+#donate .mat-mdc-mini-fab {
+  background-color: $sh-teal;
+}
+
 #get-involved {
   padding: 5rem;
 }
 
-#sh-dark-purple {
-  background-color: $sh-dark-purple;
+#membership .bg-dark-purple {
   padding: 5%;
 }
 
@@ -85,7 +89,8 @@ app-areas {
   background-color: $sh-purple-25;
 }
 
-#workends .col {
+#workends .col,
+#donate .col {
   position: relative;
   padding: unset;
 }
@@ -98,18 +103,30 @@ li {
   object-position: 0% 65%;
 }
 
+#donation-pic {
+  object-position: 0% 65%;
+}
+
 .workend h1,
 .workend ul,
-.workend p:not(li p) {
+.workend p:not(li p),
+.donation h1,
+.donation ul,
+.donation p:not(li p) {
   padding: 0 5rem;
 }
 
-#workends .row {
+#workends .row,
+#donate .row {
   justify-content: start;
 }
 
 #workends .row button {
   margin: 0 5rem 2rem;
+}
+
+#donate .row button {
+  margin: 1rem 5rem 2rem;
 }
 
 .text {
