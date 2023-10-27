@@ -6,6 +6,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
+import { MailService } from '../services/mail.service';
 
 @Component({
   selector: 'app-panel-set',
@@ -23,12 +24,10 @@ export class PanelSetComponent implements OnInit {
   panels!: QueryList<MatExpansionPanel>;
   exPanel: any[] = [];
 
+  constructor(public mailService: MailService) {}
+
   ngOnInit(): void {
     // console.log(this.panelSetData); // DO NOT REMOVE. Logging panelSetData *somehow* prevents the array from becoming randomly ordered.
-  }
-
-  mailTo(email: string) {
-    return `mailto:${email}`;
   }
 
   displaySocial(url: string) {

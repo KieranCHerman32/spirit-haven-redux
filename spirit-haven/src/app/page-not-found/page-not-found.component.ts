@@ -1,3 +1,4 @@
+import { MailService } from './../services/mail.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss'],
 })
 export class PageNotFoundComponent {
+  constructor(public mailService: MailService) {}
 }

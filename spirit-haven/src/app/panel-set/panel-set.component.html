@@ -21,7 +21,7 @@
       <ng-container *ngIf="getPanelType('csPanel')">
         <ng-container *ngIf="p.contact && p.email">
           <p class="text-white">
-            {{p.contact}} <a [href]="mailTo(p.email)">{{p.email}}</a>
+            {{p.contact}} <a [href]="mailService.mailTo(p.email)">{{p.email}}</a>
           </p>
         </ng-container>
 
@@ -47,13 +47,13 @@
       <ng-container *ngIf="getPanelType('areaPanel')">
         <ng-container *ngIf="p.repEmail else noEmail">
           <p>
-            Email: <a [href]="mailTo(p.repEmail)">{{p.repEmail}}</a>
+            Email: <a [href]="mailService.mailTo(p.repEmail)">{{p.repEmail}}</a>
           </p>
         </ng-container>
 
         <ng-template #noEmail>
           <p>
-            Email: <a [href]="mailTo('help@spirit-haven.org')">help@spirit-haven.org</a>
+            Email: <a [href]="mailService.mailTo('help@spirit-haven.org')">help@spirit-haven.org</a>
           </p>
         </ng-template>
 
