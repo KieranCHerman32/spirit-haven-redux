@@ -15,3 +15,13 @@ button {
 mat-card {
   box-shadow: none;
 }
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:active,
+a:hover {
+  color: $sh-teal
+}
