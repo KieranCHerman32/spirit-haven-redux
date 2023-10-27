@@ -2,13 +2,11 @@
 @import '../../sh-typography.scss';
 
 h1 {
-  color: $white;
   margin: 1em auto;
   padding: 0 4.75rem;
 }
 
 a {
-  color: $white;
   text-decoration: none;
 }
 
@@ -17,13 +15,7 @@ a:hover {
   color: $sh-teal
 }
 
-.mat-expansion-panel,
-.mat-expansion-panel-header-title {
-  color: $white;
-}
-
 .mat-expansion-panel {
-  background-color: $sh-purple;
   margin: .25rem 0;
 }
 
@@ -53,4 +45,15 @@ a:hover {
 .mat-divider {
   border-top: 1px solid white;
   margin: 0 5em;
+}
+
+#social,
+#social .col {
+  padding: unset;
+  margin: unset;
+}
+
+#panel-set {
+  height: 100%;
+  margin: auto;
 }
