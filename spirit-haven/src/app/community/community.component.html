@@ -83,14 +83,65 @@
 <!-- WorkEnds -->
 <ng-container>
   <div id="workends" class="row">
+    <div class="col">
+      <img id="workend-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/jpg/laneworkend.jpg" alt="">
+    </div>
 
+    <div class="col text">
+      <div class="row workend">
+        <h1>WorkEnds</h1>
+      </div>
+
+      <div class="row workend">
+        <p>
+          Ever wanted to learn how to identify native flora, build a structure, use a chainsaw, or weld - with a bunch
+          of Pagans? You'll love WorkEnds.
+        </p>
+
+        <p>
+          We tackle a wide variety of projects, including:
+        </p>
+
+        <ul>
+          <li>
+            <p>
+              Working with foresters and soil specialists to encourage and protect our native ecology
+            </p>
+          </li>
+          <li>
+            <p>
+              Repairing ranch tools
+            </p>
+          </li>
+          <li>
+            <p>
+              Building and improving new structures
+            </p>
+          </li>
+          <li>
+            <p>
+              Maintaining and improving Sacred Spaces
+            </p>
+          </li>
+          <li>
+            <p>
+              Improving accessibility around the ranch
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <div class="row">
+        <button mat-fab extended routerLink="">Learn More</button>
+      </div>
+    </div>
   </div>
 </ng-container>
 
 <!-- Area -->
 <ng-container>
   <div id="area" class="row">
-
+    <app-areas></app-areas>
   </div>
 </ng-container>
 
