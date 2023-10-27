@@ -41,6 +41,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TimelineComponent } from './timeline/timeline.component';
 import { TriptychComponent } from './triptych/triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
+import { AreasComponent } from './areas/areas.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-tript
     VolunteerTriptychComponent,
     PanelSetComponent,
     CommunityServiceComponent,
+    AreasComponent,
   ],
   imports: [
     BrowserModule,
