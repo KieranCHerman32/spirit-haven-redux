@@ -1,0 +1,75 @@
+@import '../../sh-pallette.scss';
+@import '../../sh-typography.scss';
+@import '../../sh-styles.scss';
+
+h1 {
+  color: $sh-purple;
+  margin: 1em auto;
+}
+
+p {
+  font-size: 1rem;
+}
+
+p,
+h1 {
+  padding: 0 5rem;
+  margin: 1rem 0;
+}
+
+iframe {
+  min-height: 50vh;
+  padding: unset;
+  margin: unset;
+  border-radius: $sh-radius;
+}
+
+app-panel-set {
+  padding: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.col,
+.row {
+  display: flex;
+  padding: unset;
+  margin: unset;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+#map {
+  padding: 0 5rem 5rem;
+}
+
+#panels {
+  padding: 0 0 3rem;
+  justify-content: space-around;
+}
+
+#info {
+  justify-content: center;
+}
+
+#main {
+  padding: 2rem 0;
+  background-color: $sh-teal-25;
+}
+
+#main h1,
+#main h5 {
+  padding: unset;
+}
+
+#main h5 {
+  margin-bottom: 1rem;
+}

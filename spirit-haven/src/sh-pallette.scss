@@ -13,7 +13,7 @@ $water: #CAECEE;
 // USE THESE WHEN DEFINING VALUES IN SCSS //
 $sh-purple: $blue-magenta-violet;
 $sh-purple-25: $languid-lavender;
-$sh-text-dark-purple: $jacarta;
+$sh-dark-purple: $jacarta;
 $sh-accent-green: $emerald;
 $sh-accent-green-light: $eton-blue;
 $sh-teal: $maximum-blue-green;
@@ -24,8 +24,82 @@ $sh-teal-25: $water;
 // USE WITH CAUTION //
 $sh-purple-ws: #663399;
 $sh-purple-25-ws: #CCCCCC;
-$sh-text-dark-purple-ws: #333366;
+$sh-dark-purple-ws: #333366;
 $sh-accent-green-ws: #66CC99;
 $sh-accent-green-light-ws: #99CC99;
 $sh-teal-ws: #33CCCC;
 $sh-teal-25-ws: #CCFFFF;
+
+// BG CLASSES //
+.bg-white {
+  color: $white;
+}
+
+.bg-black {
+  color: $black;
+}
+
+.bg-purple {
+  background-color: $sh-purple;
+}
+
+.bg-purple-25 {
+  background-color: $sh-purple-25;
+}
+
+.bg-dark-purple {
+  background-color: $sh-dark-purple;
+}
+
+.bg-accent-green {
+  background-color: $sh-accent-green;
+}
+
+.bg-accent-green-light {
+  background-color: $sh-accent-green-light;
+}
+
+.bg-teal {
+  background-color: $sh-teal;
+}
+
+.bg-teal-25 {
+  background-color: $sh-teal-25;
+}
+
+// COLOR CLASSES //
+.text-white {
+  color: $white;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-purple {
+  color: $sh-purple;
+}
+
+.text-purple-25 {
+  color: $sh-purple-25;
+}
+
+.text-dark-purple {
+  color: $sh-dark-purple;
+}
+
+.text-accent-green {
+  color: $sh-accent-green;
+}
+
+.text-accent-green-light {
+  color: $sh-accent-green-light;
+}
+
+.text-teal {
+  color: $sh-teal;
+}
+
+.text-teal-25 {
+  color: $sh-teal-25;
+}

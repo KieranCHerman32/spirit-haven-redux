@@ -4,6 +4,7 @@ export interface PanelSetData {
 }
 
 export interface CSPanelSetData extends PanelSetData {
+  // csPanel //
   contact?: string[];
   email?: string;
   limited?: boolean;
@@ -12,6 +13,7 @@ export interface CSPanelSetData extends PanelSetData {
 }
 
 export interface AreaPanelSetData extends PanelSetData {
-  repEmails: string[];
-  areaSocials: string[];
+  // areaPanel //
+  repEmail?: string;
+  areaSocials?: string[];
 }

@@ -1,15 +1,16 @@
 @import '../../sh-pallette.scss';
 @import '../../sh-typography.scss';
+@import '../../sh-styles.scss';
 
 h1 {
   font-size: 2.75rem;
-  color: $sh-purple;
+  // color: $sh-purple;
   padding: unset;
-  padding-bottom: 3rem;
-  margin: unset;
+  margin: 2rem 0;
 }
 
-app-community-service {
+app-community-service,
+app-areas {
   padding: unset;
   margin: unset;
 }
@@ -17,7 +18,6 @@ app-community-service {
 .row {
   align-content: center;
   justify-content: center;
-  align-items: center;
 }
 
 #get-involved .row {
@@ -37,14 +37,102 @@ app-community-service {
 .mat-mdc-mini-fab {
   box-shadow: none;
   background-color: $sh-purple;
-  width: 100%;
+  width: 25%;
+  white-space: nowrap;
+  min-width: min-content;
+}
+
+#donate .mat-mdc-fab,
+#donate .mat-mdc-mini-fab {
+  background-color: $sh-teal;
 }
 
 #get-involved {
   padding: 5rem;
 }
 
-#sh-dark-purple {
-  background-color: $sh-text-dark-purple;
+#membership .bg-dark-purple {
   padding: 5%;
+}
+
+#join-a-team {
+  padding: 2rem 0;
+  background-color: $sh-teal-25;
+}
+
+#join-a-team h1,
+#join-a-team h5 {
+  color: $sh-purple;
+  padding: unset;
+}
+
+#join-a-team h5 {
+  margin-bottom: 1rem;
+}
+
+#volunteer {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+#join-a-team p {
+  width: fit-content;
+  padding: unset;
+  margin: 0 0 3em;
+}
+
+.img-fluid.info-img {
+  object-fit: cover;
+}
+
+#workends {
+  background-color: $sh-purple-25;
+}
+
+#workends .col,
+#donate .col {
+  position: relative;
+  padding: unset;
+}
+
+li {
+  margin-left: 2rem;
+}
+
+#workend-pic {
+  object-position: 0% 65%;
+}
+
+#donation-pic {
+  object-position: 0% 65%;
+}
+
+.workend h1,
+.workend ul,
+.workend p:not(li p),
+.donation h1,
+.donation ul,
+.donation p:not(li p) {
+  padding: 0 5rem;
+}
+
+#workends .row,
+#donate .row {
+  justify-content: start;
+}
+
+#workends .row button {
+  margin: 0 5rem 2rem;
+}
+
+#donate .row button {
+  margin: 1rem 5rem 2rem;
+}
+
+.text {
+  margin: 2rem 0;
+}
+
+#get-involved button {
+  width: 100%;
 }

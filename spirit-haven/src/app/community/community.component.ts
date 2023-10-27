@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AreaPanelSetData, PanelSetData } from '../types/PanelSetData';
 
 @Component({
   selector: 'app-community',
@@ -18,5 +19,9 @@ export class CommunityComponent implements OnInit {
         document.querySelector(`#${this.fragment}`)!.scrollIntoView();
       }
     });
+  }
+
+  goToUrl(url: string) {
+    const newWindow = window.open(url, '_blank');
   }
 }
