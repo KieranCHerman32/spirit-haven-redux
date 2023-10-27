@@ -42,6 +42,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { TriptychComponent } from './triptych/triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
 import { AreasComponent } from './areas/areas.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { AreasComponent } from './areas/areas.component';
     PanelSetComponent,
     CommunityServiceComponent,
     AreasComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
