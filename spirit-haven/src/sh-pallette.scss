@@ -30,10 +30,6 @@ $sh-accent-green-light-ws: #99CC99;
 $sh-teal-ws: #33CCCC;
 $sh-teal-25-ws: #CCFFFF;
 
-p {
-  color: $sh-dark-purple;
-}
-
 // BG CLASSES //
 .bg-white {
   color: $white;
@@ -106,41 +102,4 @@ p {
 
 .text-teal-25 {
   color: $sh-teal-25;
-}
-
-// DIVIDER CLASSES //
-.white-divider {
-  border-top: 1px solid $white;
-}
-
-.black-divider {
-  border-top: 2px solid $black;
-}
-
-.purple-divider {
-  border-top: 1px solid $sh-purple;
-}
-
-.purple-25-divider {
-  border-top: 1px solid $sh-purple-25;
-}
-
-.dark-purple-divider {
-  border-top: 1px solid $sh-dark-purple;
-}
-
-.accent-green-divider {
-  border-top: 1px solid $sh-accent-green;
-}
-
-.accent-green-light-divider {
-  border-top: 1px solid $sh-accent-green-light;
-}
-
-.teal-divider {
-  border-top: 1px solid $sh-teal;
-}
-
-.teal-25-divider {
-  border-top: 1px solid $sh-teal-25;
 }

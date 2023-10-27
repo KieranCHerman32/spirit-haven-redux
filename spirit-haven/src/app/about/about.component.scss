@@ -31,5 +31,5 @@ h1 {
   margin: auto;
   padding: 7rem;
   position: relative;
-  background-color: #5B479575;
+  background-color: #5B479575; // BREAKS WHEN USING NON HEX VALUE FOR COLOR
 }

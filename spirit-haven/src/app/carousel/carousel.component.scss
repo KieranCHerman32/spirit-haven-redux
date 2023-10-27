@@ -26,9 +26,9 @@ c-carousel-item .img-fluid {
   object-fit: cover;
 }
 
-.wrapper {
+.wrapper:not(.bg) {
   position: relative;
-  background-color: #5B479575;
+  background-color: #5B479575; // BREAKS WHEN USING NON HEX VALUE FOR COLOR
 }
 
 .bg {
