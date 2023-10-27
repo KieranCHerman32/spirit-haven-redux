@@ -1,3 +1,9 @@
 app-footer {
   margin-top: auto;
 }
+
+.container-fluid {
+  padding: unset;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
