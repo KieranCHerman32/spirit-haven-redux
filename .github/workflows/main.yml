@@ -3,7 +3,7 @@ name: angular-build
 on:
   push:
     branches:
-      - 'release-preview'
+      - 'main'
 
 jobs:
   build:
