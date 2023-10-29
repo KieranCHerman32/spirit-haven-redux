@@ -1,0 +1,54 @@
+@import '../../sh-pallette.scss';
+@import '../../sh-typography.scss';
+$min: 600px;
+$min-inset: calc($min / 4);
+
+c-carousel-item,
+.wrapper {
+  height: $min;
+}
+
+app-countdown {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+c-carousel-caption {
+  text-align: unset;
+  height: fit-content;
+  right: 50%;
+  left: 7%;
+  top: 50%;
+}
+
+c-carousel-item .img-fluid {
+  object-fit: cover;
+}
+
+.wrapper:not(.bg) {
+  position: relative;
+  background-color: #5B479575; // BREAKS WHEN USING NON HEX VALUE FOR COLOR
+}
+
+.bg {
+  position: relative;
+  background-color: $black;
+}
+
+.wrapper h1,
+.wrapper h5 {
+  color: $white;
+  white-space: pre-line;
+}
+
+.wrapper h1 {
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper h5 {
+  font-family: 'Open Sans Variable', sans-serif;
+  font-weight: 400;
+  width: 85%;
+}
