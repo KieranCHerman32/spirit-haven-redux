@@ -14,18 +14,20 @@
         <div *ngIf="(timeLeft$ | async) as t;" class="row">
           <div class="col countdown-wrapper">
             <div class="countdown-element">
-              <span class="countdown-digit">{{t.daysToEnd || '0'}}</span><span class="countdown-label"> Day(s)</span>
+              <span class="countdown-digit">{{t.days_remaining || '0'}}</span>
+              <span class="countdown-label">Day(s)</span>
             </div>
             <div class="countdown-element">
-              <span class="countdown-digit">{{t.hoursToEnd || '0'}}</span><span class="countdown-label"> Hour(s)</span>
+              <span class="countdown-digit">{{t.hours_remaining || '0'}}</span>
+              <span class="countdown-label">Hour(s)</span>
             </div>
             <div class="countdown-element">
-              <span class="countdown-digit">{{t.minutesToEnd || '0'}}</span><span class="countdown-label">
-                Minutes(s)</span>
+              <span class="countdown-digit">{{t.minutes_remaining || '0'}}</span>
+              <span class="countdown-label">Minutes(s)</span>
             </div>
             <div class="countdown-element">
-              <span class="countdown-digit">{{t.secondsToEnd || '0'}}</span><span class="countdown-label">
-                Second(s)</span>
+              <span class="countdown-digit">{{t.seconds_remaining || '0'}}</span>
+              <span class="countdown-label">Second(s)</span>
             </div>
           </div>
         </div>
