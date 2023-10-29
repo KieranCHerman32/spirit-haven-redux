@@ -2,133 +2,140 @@
 
 <!-- Collage / "What is...?" -->
 <ng-container>
-  <!-- TODO: Rebuild as component using full size images -->
-  <div id="collage-row" class="row info-row">
-    <div id="collage" class="col">
-      <img priority class="img-fluid" ngSrc="../../assets/collage/collage.png" alt="" width="600" height="600">
-      <img priority id="flame" class="img-fluid" ngSrc="../../assets/collage/teal flame.svg" alt="" width="300"
-           height="300">
-    </div>
-    <div id="info" class="col">
-      <div class="row text-purple">
-        <h1>What is Spirit Haven?</h1>
-      </div>
-      <div class="row text-dark-purple">
-        <p>
-          Spirit Haven, Inc. is a Pagan, 501(c)3 multicultural organization that is committed to fostering
-          spirituality.
-          We provide a haven for community and celebration to support and promote the well-being of a diverse
-          membership, as well as the local and greater community.
-        </p>
-      </div>
-      <div class="row">
-        <button mat-fab extended routerLink="">Learn More</button>
-      </div>
-    </div>
-  </div>
+	<!-- TODO: Rebuild as component using full size images -->
+	<div id="collage-row" class="row info-row">
+		<div id="collage" class="col">
+			<img priority class="img-fluid" ngSrc="assets/collage/collage.png" alt="" width="600" height="600">
+			<img priority id="flame" class="img-fluid" ngSrc="assets/collage/teal flame.svg" alt="" width="300"
+				 height="300">
+		</div>
+		<div id="info" class="col">
+			<div class="row text-purple">
+				<h1>What is Spirit Haven?</h1>
+			</div>
+			<div class="row text-dark-purple">
+				<p>
+					Spirit Haven, Inc. is a Pagan, 501(c)3 multicultural organization that is committed to fostering
+					spirituality.
+					We provide a haven for community and celebration to support and promote the well-being of a diverse
+					membership, as well as the local and greater community.
+				</p>
+			</div>
+			<div class="row">
+				<button mat-fab extended routerLink="">Learn More</button>
+			</div>
+		</div>
+	</div>
 </ng-container>
 
 <app-principle-divider></app-principle-divider>
 
 <!-- Festivals -->
 <ng-container>
-  <div id="sh-purple" class="row info-row text-white">
-    <div class="col info-img">
-      <img id="festival-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/jpg/guardian-fire-dark.jpg"
-           alt="">
-    </div>
-    <div class="col text">
-      <div class="row">
-        <h1>Festivals</h1>
-      </div>
-      <div class="row">
-        <p>
-          Each year, Spirit Haven hosts a Beltane and Samhain festival at Spirit Haven Ranch, a 100+ acre property in
-          Flatonia, Texas. These festivals include four days and three nights of Pagan-based spirituality, community,
-          and celebration. You'll find ample open camping, 17 Sacred Spaces to explore, a welcoming community, and a
-          packed schedule to plan your personal event!
-        </p>
-      </div>
-      <div class="row">
-        <button id="teal-btn" mat-fab extended routerLink="">Learn More</button>
-      </div>
-    </div>
-  </div>
+	<div id="sh-purple" class="row info-row text-white">
+		<div class="col info-img">
+			<img id="festival-pic" priority fill class="img-fluid info-img" ngSrc="assets/jpg/guardian-fire-dark.jpg"
+				 alt="">
+		</div>
+		<div class="col text">
+			<div class="row">
+				<h1>Festivals</h1>
+			</div>
+			<div class="row">
+				<p>
+					Each year, Spirit Haven hosts a Beltane and Samhain festival at Spirit Haven Ranch, a 100+ acre
+					property in
+					Flatonia, Texas. These festivals include four days and three nights of Pagan-based spirituality,
+					community,
+					and celebration. You'll find ample open camping, 17 Sacred Spaces to explore, a welcoming community,
+					and a
+					packed schedule to plan your personal event!
+				</p>
+			</div>
+			<div class="row">
+				<button id="teal-btn" mat-fab extended routerLink="">Learn More</button>
+			</div>
+		</div>
+	</div>
 </ng-container>
 
 <!-- Membership -->
 <ng-container>
-  <div id="sh-dark-purple">
-    <app-member-triptych [direction]="'row'"></app-member-triptych>
-  </div>
+	<div id="sh-dark-purple">
+		<app-member-triptych [direction]="'row'"></app-member-triptych>
+	</div>
 </ng-container>
 
 <!-- WorkEnds -->
 <ng-container>
-  <div class="row info-row">
-    <div id="info" class="col text">
-      <div class="row text-purple">
-        <h1>WorkEnds</h1>
-      </div>
-      <div class="row text-dark-purple">
-        <p>
-          Grab a friend and join us at WorkEnds: smaller gatherings focused on loving stewardship, forging bonds outside
-          of Festivals, and caring for our home, Spirit Haven Ranch.
-        </p>
+	<div class="row info-row">
+		<div id="info" class="col text">
+			<div class="row text-purple">
+				<h1>WorkEnds</h1>
+			</div>
+			<div class="row text-dark-purple">
+				<p>
+					Grab a friend and join us at WorkEnds: smaller gatherings focused on loving stewardship, forging
+					bonds outside
+					of Festivals, and caring for our home, Spirit Haven Ranch.
+				</p>
 
-        <ul>
-          <li>
-            Volunteer opportunities for all skill and ability levels
-          </li>
-          <li>
-            No membership is required for your first two visits!
-          </li>
-        </ul>
+				<ul>
+					<li>
+						Volunteer opportunities for all skill and ability levels
+					</li>
+					<li>
+						No membership is required for your first two visits!
+					</li>
+				</ul>
 
-      </div>
-      <div class="row">
-        <button mat-fab extended routerLink="">Learn More</button>
-      </div>
-    </div>
-    <div class="col">
-      <img id="workend-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/jpg/laneworkend.jpg" alt="">
-    </div>
-  </div>
+			</div>
+			<div class="row">
+				<button mat-fab extended routerLink="">Learn More</button>
+			</div>
+		</div>
+		<div class="col">
+			<img id="workend-pic" priority fill class="img-fluid info-img" ngSrc="assets/jpg/laneworkend.jpg" alt="">
+		</div>
+	</div>
 </ng-container>
 
 <!-- Volunteer -->
 <ng-container>
-  <div id="sh-purple-25">
-    <app-volunteer-triptych></app-volunteer-triptych>
-  </div>
+	<div id="sh-purple-25">
+		<app-volunteer-triptych></app-volunteer-triptych>
+	</div>
 </ng-container>
 
 <!-- Sacred Spaces -->
 <ng-container>
-  <div class="row info-row">
-    <div class="col">
-      <img id="sacred-space-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/png/Image.png" alt="">
-    </div>
-    <div id="info" class="col text">
-      <div class="row text-purple">
-        <h1>Sacred Spaces</h1>
-      </div>
-      <div class="row text-dark-purple">
-        <p>
-          Many members have curated Sacred Spaces honoring a wide variety of energies they feel drawn to. These scenic
-          spaces often feature dedicated altars where those who feel lead to can leave nature-safe offerings or connect
-          to the unique energy of the space. Sacred Spaces are perfect for reflection, learning, and rites. Currently,
-          Spirit Haven Ranch hosts 17 Sacred Spaces.
-        </p>
-      </div>
-      <div class="row">
-        <button mat-fab extended routerLink="">Learn More</button>
-      </div>
-    </div>
-  </div>
+	<div class="row info-row">
+		<div class="col">
+			<img id="sacred-space-pic" priority fill class="img-fluid info-img" ngSrc="assets/png/Image.png" alt="">
+		</div>
+		<div id="info" class="col text">
+			<div class="row text-purple">
+				<h1>Sacred Spaces</h1>
+			</div>
+			<div class="row text-dark-purple">
+				<p>
+					Many members have curated Sacred Spaces honoring a wide variety of energies they feel drawn to.
+					These scenic
+					spaces often feature dedicated altars where those who feel lead to can leave nature-safe offerings
+					or connect
+					to the unique energy of the space. Sacred Spaces are perfect for reflection, learning, and rites.
+					Currently,
+					Spirit Haven Ranch hosts 17 Sacred Spaces.
+				</p>
+			</div>
+			<div class="row">
+				<button mat-fab extended routerLink="">Learn More</button>
+			</div>
+		</div>
+	</div>
 </ng-container>
 
 <!-- Contact / FAQ -->
 <ng-container>
-  <!-- TODO: Build Contact / FAQ as component -->
+	<!-- TODO: Build Contact / FAQ as component -->
 </ng-container>
