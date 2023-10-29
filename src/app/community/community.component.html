@@ -1,0 +1,184 @@
+<app-header [pageTitle]="'Community'" [headerImg]="'../../assets/jpg/revel-wide.jpg'"
+            [position]="'50% 45%'"></app-header>
+
+<div class="container">
+  <div id="get-involved" class="row">
+    <div class="row text-center align-items-center text-purple">
+      <h1>Ways to get involved</h1>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="membership" queryParamsHandling="merge">
+          Become a Member
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="community-service" queryParamsHandling="merge">
+          Festival Community Service
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="join-a-team" queryParamsHandling="merge">
+          Join a Volunteer Team
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="workends" queryParamsHandling="merge">
+          Visit a WorkEnd
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="area" queryParamsHandling="merge">
+          Join your local Area
+        </button>
+      </div>
+      <div class="col-3">
+        <button mat-fab extended routerLink="./" fragment="donate" queryParamsHandling="merge">
+          Donate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Membership -->
+<ng-container>
+  <div id="membership">
+    <div class="bg-dark-purple">
+      <app-member-triptych [alternate]="true" [direction]="'col'"></app-member-triptych>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Community Service -->
+<ng-container>
+  <div id="community-service" class="row">
+    <app-community-service></app-community-service>
+  </div>
+</ng-container>
+
+<!-- Volunteer -->
+<ng-container>
+  <div id="join-a-team" class="row">
+    <div class="row text-center text-purple">
+      <h1>Join a volunteer team</h1>
+      <h5>(There's plenty of work to do.)</h5>
+    </div>
+    <div id="volunteer" class="row w-50 text-dark-purple">
+      <p>
+        Did you enjoy your festival community service and decide you're ready to step up? Reach out to the team lead!
+        Are you good at copy editing? Consider joining our Policy Committee! Know of some good spots to hang flyers or
+        run a booth? Give being an Area Representative a shot! Do you resonate with a particular Sacred Space at Spirit
+        Haven Ranch? Reach out to that Sacred Space Coordinator to see if they need an
+        assistant! Want to step up and contribute more to maintaining and nurturing Spirit Haven Ranch? Reach out to the
+        Ranch Team - we need your help! Not sure where you'd like to contribute your time, but have a niche skill? Reach
+        out to the Board - they'll know where you can best help!
+      </p>
+    </div>
+  </div>
+</ng-container>
+
+<!-- WorkEnds -->
+<ng-container>
+  <div id="workends" class="row">
+    <div class="col">
+      <img id="workend-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/jpg/laneworkend.jpg" alt="">
+    </div>
+
+    <div class="col text">
+      <div class="row workend text-purple">
+        <h1>WorkEnds</h1>
+      </div>
+
+      <div class="row workend text-dark-purple">
+        <p>
+          Ever wanted to learn how to identify native flora, build a structure, use a chainsaw, or weld - with a bunch
+          of Pagans? You'll love WorkEnds.
+        </p>
+
+        <p>
+          We tackle a wide variety of projects, including:
+        </p>
+
+        <ul>
+          <li>
+            <p>
+              Working with foresters and soil specialists to encourage and protect our native ecology
+            </p>
+          </li>
+          <li>
+            <p>
+              Repairing ranch tools
+            </p>
+          </li>
+          <li>
+            <p>
+              Building and improving new structures
+            </p>
+          </li>
+          <li>
+            <p>
+              Maintaining and improving Sacred Spaces
+            </p>
+          </li>
+          <li>
+            <p>
+              Improving accessibility around the ranch
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <div class="row">
+        <button mat-fab extended routerLink="">Learn More</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Area -->
+<ng-container>
+  <div id="area" class="row">
+    <app-areas></app-areas>
+  </div>
+</ng-container>
+
+<!-- Calendar -->
+<ng-container>
+  <div id="calendar" class="row">
+    <!-- TODO: Get iframe data from Technomancer -->
+  </div>
+</ng-container>
+
+<!-- Donate -->
+<ng-container>
+  <div id="donate" class="row text-white bg-dark-purple">
+    <div class="col text">
+      <div class="row donation">
+        <h1>Donate</h1>
+      </div>
+
+      <div class="row donation">
+        <p>
+          Spirit Haven, Inc. is an entirely volunteer operated organization that is privileged to own 100+ acres of land
+          at Spirit Haven Ranch (SHR) where we host two Festivals annually. That takes a lot of resources!
+        </p>
+
+        <p>
+          Donations go directly to helping us continue to maintain our land and host these events. Donations also assist
+          Spirit Haven in supporting our local volunteer fire department and statewide disaster relief efforts.
+        </p>
+
+      </div>
+      <div class="row">
+        <button mat-fab extended (click)="goToUrl('https://buy.stripe.com/6oE03Mggf69R7p6cMN')">Donate Here</button>
+      </div>
+    </div>
+
+    <div class="col">
+      <img id="donation-pic" priority fill class="img-fluid info-img" ngSrc="../../assets/jpg/heartwood.jpg" alt="">
+    </div>
+  </div>
+</ng-container>

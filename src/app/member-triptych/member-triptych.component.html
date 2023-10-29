@@ -1,0 +1,107 @@
+<ng-container *ngIf="alternate == false; else alt">
+  <mat-card id="main">
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <ng-container *ngTemplateOutlet="memberHeader"></ng-container>
+          <div class="row text-dark-purple">
+            <ng-container *ngTemplateOutlet="whoCanJoin"></ng-container>
+          </div>
+
+          <div class="row text-dark-purple">
+            <ng-container *ngTemplateOutlet="memberInfo"></ng-container>
+          </div>
+        </div>
+
+        <div class="col">
+          <app-triptych [ngStyle]="{'display' : 'unset'}" [content]="'membership'"></app-triptych>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #alt>
+  <mat-card id="alt">
+    <mat-card-content>
+      <div class="row">
+        <ng-container *ngTemplateOutlet="memberHeader"></ng-container>
+      </div>
+
+      <div class="row text-dark-purple">
+        <div class="col">
+          <ng-container *ngTemplateOutlet="whoCanJoin"></ng-container>
+        </div>
+
+        <div class="col">
+          <ng-container *ngTemplateOutlet="memberInfo"></ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <app-triptych [content]="'membership'" [dirClass]="direction"></app-triptych>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #memberHeader>
+  <div id="member-header" class="row text-purple text-center">
+    <h3>Membership</h3>
+  </div>
+</ng-template>
+
+<ng-template #whoCanJoin>
+  <p>
+    Who can be a member?
+  </p>
+  <ul>
+    <li>
+      <p>
+        Anyone 18 or older may join Spirit Haven!
+      </p>
+      <p id="member-child">
+        Children under 18 are free of charge, but their membership and event registrations will be tied to their
+        parent or legal guardian until they are 18.
+      </p>
+    </li>
+    <li>
+      <p>
+        Any member older than 18 must have their own Spirit Haven account.
+      </p>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #memberInfo>
+  <p>
+    A Spirit Haven membership includes:
+  </p>
+  <ul>
+    <li>
+      <p>
+        Voting for our Board of Directors
+      </p>
+    </li>
+    <li>
+      <p>
+        Voting on policies and more at Great Works (business meetings)
+      </p>
+    </li>
+    <li>
+      <p>
+        Ability to attend Festivals
+      </p>
+    </li>
+    <li>
+      <p>
+        Ability to attend more than two WorkEnds in a year
+      </p>
+    </li>
+    <li>
+      <p>
+        Sharing in an inclusive and diverse community
+      </p>
+    </li>
+  </ul>
+</ng-template>
