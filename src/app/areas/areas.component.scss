@@ -32,21 +32,6 @@ app-panel-set {
   flex-wrap: nowrap;
 }
 
-.col,
-.row {
-  display: flex;
-  padding: unset;
-  margin: unset;
-}
-
-.col {
-  flex-direction: column;
-}
-
-.row {
-  flex-direction: row;
-}
-
 #map {
   padding: 0 5rem 5rem;
 }
