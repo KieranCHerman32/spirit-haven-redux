@@ -83,22 +83,18 @@ mat-icon.timeline-end {
 }
 
 .col:has(.title.start) {
-  display: flex;
   justify-content: flex-end;
 }
 
 .col:has(.title.end) {
-  display: flex;
   justify-content: flex-start;
 }
 
 .start {
-  display: flex;
   justify-content: flex-end;
 }
 
 .end {
-  display: flex;
   justify-content: flex-start;
 }
 
@@ -121,8 +117,6 @@ mat-icon.timeline-end {
 .col.content {
   padding: 1rem;
   border-radius: $sh-radius;
-  display: flex;
-  flex-direction: column;
 }
 
 .col.content.start {
