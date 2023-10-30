@@ -17,6 +17,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
+      useHash: true, // required for gh-pages deployment
       scrollPositionRestoration: 'enabled', // or 'top'
       anchorScrolling: 'enabled',
       scrollOffset: [0, 100], // [x, y] - adjust scroll offset
