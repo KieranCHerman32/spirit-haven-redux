@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LayoutModule } from '@angular/cdk/layout';
 import { NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -89,6 +90,7 @@ import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-tript
     MatCardModule,
     CarouselModule,
     MatSidenavModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
