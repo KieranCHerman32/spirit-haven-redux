@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { environment } from 'src/environments/environment';
+import { ViewportService } from '../services/viewport.service';
 
 @Component({
   selector: 'app-nav',
@@ -17,6 +18,8 @@ export class NavComponent implements OnInit {
   communityDropdown!: bootstrap.Dropdown;
   festivalDropdown!: bootstrap.Dropdown;
   ranchDropdown!: bootstrap.Dropdown;
+
+  constructor(public viewportService: ViewportService) {}
 
   ngOnInit(): void {
     const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
