@@ -2,22 +2,9 @@
 @import '../../sh-typography.scss';
 @import '../../sh-styles.scss';
 
-.col-1 {
-  padding: unset;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.start {
-  justify-content: flex-start;
-  display: inline-flex;
-}
-
-.end {
-  justify-content: flex-end;
-  display: inline-flex;
+.row {
+  justify-content: space-between;
+  max-width: 100vw;
 }
 
 .dropdown-toggle::after {
@@ -48,26 +35,17 @@
   border: none !important;
 }
 
-img {
-  padding-right: 6rem;
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  background-color: $sh-purple;
 }
 
 mat-toolbar {
   position: sticky;
   background-color: $white;
   color: $sh-purple;
-  box-shadow: $sh-purple-shadow;
   height: unset;
-  padding: 1em;
-}
-
-.mat-mdc-fab,
-.mat-mdc-mini-fab {
-  background-color: $sh-purple;
-}
-
-#logo-fix {
-  margin-right: 6.25rem;
+  box-shadow: $sh-purple-shadow;
 }
 
 a {
@@ -81,7 +59,7 @@ a,
 }
 
 // a:not(.active)::after,
-.hover:not(.active)::after {
+.hover:not(.active, #nav-menu *)::after {
   display: block;
   content: '';
   position: relative;
@@ -96,7 +74,7 @@ a,
 }
 
 // a:not(.active):hover::after,
-.hover:not(.active):hover::after {
+.hover:not(.active, #nav-menu *):hover::after {
   transform: scaleX(1);
   transform-origin: center;
 }
@@ -122,8 +100,81 @@ a,
 
 .btn:disabled,
 .btn.disabled {
-  border: 1px solid hotpink;
   color: unset;
   pointer-events: initial;
   opacity: unset;
+}
+
+.nav-item {
+  width: min-content;
+}
+
+.pad-fix {
+  padding: 1rem 0;
+}
+
+#logo,
+#nav-end {
+  margin: unset;
+  padding: unset;
+  max-width: calc(100vw / 3);
+  display: flex;
+}
+
+#logo {
+  justify-content: flex-start;
+}
+
+#nav-end {
+  justify-content: flex-end;
+}
+
+#nav-menu {
+  display: none;
+  width: min-content;
+}
+
+#nav-menu button {
+  height: 1.75rem;
+  width: 1.75rem;
+  background-color: unset;
+  color: $sh-purple;
+}
+
+@media (max-width: 1875px) {
+
+  #logo,
+  #nav-end {
+    max-width: calc(100vw / 4);
+    display: flex;
+  }
+}
+
+@media (max-width: 1250px) {
+
+  #logo,
+  #nav-end {
+    max-width: calc(100vw / 5);
+    display: flex;
+  }
+}
+
+@media (max-width: 1041px) {
+
+  #logo,
+  #nav-end {
+    max-width: calc(100vw / 6);
+    display: flex;
+  }
+}
+
+@media (max-width: 1040px) {
+  #nav-menu {
+    display: flex;
+  }
+
+  .nav-item,
+  #nav-end {
+    display: none;
+  }
 }
