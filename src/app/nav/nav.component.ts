@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import * as bootstrap from 'bootstrap';
 import { environment } from 'src/environments/environment';
 import { ViewportService } from '../services/viewport.service';
@@ -12,6 +12,8 @@ export class NavComponent implements OnInit {
   env = environment;
   memberAuth: any;
 
+  viewportService = inject(ViewportService);
+
   hoverList!: NodeListOf<Element>;
   dropdownElementList!: NodeListOf<Element>;
   dropdownInstanceList!: bootstrap.Dropdown[];
@@ -19,7 +21,7 @@ export class NavComponent implements OnInit {
   festivalDropdown!: bootstrap.Dropdown;
   ranchDropdown!: bootstrap.Dropdown;
 
-  constructor(public viewportService: ViewportService) {}
+  constructor() {}
 
   ngOnInit(): void {
     const dropdownElementList = document.querySelectorAll('.dropdown-toggle');

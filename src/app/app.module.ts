@@ -45,6 +45,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TimelineComponent } from './timeline/timeline.component';
 import { TriptychComponent } from './triptych/triptych.component';
 import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-triptych.component';
+import { ViewportService } from './services/viewport.service';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import { VolunteerTriptychComponent } from './volunteer-triptych/volunteer-tript
     MatSidenavModule,
     LayoutModule,
   ],
-  providers: [],
+  providers: [ViewportService],
   bootstrap: [AppComponent],
 })
 export class AppModule {
