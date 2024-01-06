@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AreaPanelSetData, PanelSetData } from '../types/PanelSetData';
 
 @Component({
   selector: 'app-community',

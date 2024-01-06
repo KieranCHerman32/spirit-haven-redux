@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(public viewportService: ViewportService) {}
 
   ngAfterViewInit(): void {
-    this.viewportService.getOffsets();
+    this.viewportService.getMobileNav();
   }
 
   ngOnDestroy() {

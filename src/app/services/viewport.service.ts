@@ -83,12 +83,6 @@ export class ViewportService {
     console.log('Current Screen Layout', this.currentScreenLayout);
   }
 
-  getOffsets() {
-    this.getNavOffset();
-    this.getFooterOffset();
-    this.getViewportOffset();
-  }
-
   getLayoutChange() {
     console.log('reading layout');
     this.breakpointObserver
@@ -105,7 +99,6 @@ export class ViewportService {
                 .replace('orientation: ', '')
                 .replace(')', '');
               this.getMobileNav();
-              this.getOffsets();
               this.log();
             }
           }
@@ -128,7 +121,6 @@ export class ViewportService {
             this.currentScreenSize =
               this.displayNameMap.get(query) ?? 'Unknown';
             this.getMobileNav();
-            this.getOffsets();
             this.log();
           }
         }
@@ -140,6 +132,8 @@ export class ViewportService {
       .querySelector('mat-toolbar')
       ?.getBoundingClientRect().height!;
     this.navOffset = this.navOffset !== offset ? offset : this.navOffset;
+
+    this.getFooterOffset();
   }
 
   getFooterOffset() {
@@ -148,23 +142,37 @@ export class ViewportService {
       ?.getBoundingClientRect().height!;
     this.footerOffset =
       this.footerOffset !== offset ? offset : this.footerOffset;
+
+    this.getViewportOffset();
   }
 
   getViewportOffset() {
+    console.log;
     const offset =
       this.navOffset && this.footerOffset
         ? this.navOffset + this.footerOffset
         : this.navOffset || this.footerOffset;
     this.viewportOffset =
       this.viewportOffset !== offset ? offset : this.viewportOffset;
+
+    document
+      .querySelector('.mat-sidenav')
+      ?.setAttribute('min-height', `calc(100% - ${this.footerOffset})`);
   }
 
   offsetString() {
-    return window.innerHeight - this.viewportOffset;
+    console.log(window.innerHeight);
+    console.log(this.viewportOffset);
+    console.log(window.innerHeight - this.viewportOffset);
+    return String(window.innerHeight - this.viewportOffset);
   }
 
   getMobileNav() {
+    console.log('mobileNav');
     const mobileNav = this.mobileBreakpoints.includes(this.currentScreenSize);
     this.mobileNav = mobileNav;
+    if (this.mobileNav == true) {
+      this.getNavOffset();
+    }
   }
 }

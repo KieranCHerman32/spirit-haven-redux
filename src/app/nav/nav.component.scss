@@ -110,6 +110,14 @@ a,
   width: min-content;
 }
 
+.mat-sidenav {
+  min-height: 100% !important;
+}
+
+.mat-sidenav-content {
+  min-height: unset !important;
+}
+
 .mat-sidenav-inner-container {
   padding: 1rem;
 }
