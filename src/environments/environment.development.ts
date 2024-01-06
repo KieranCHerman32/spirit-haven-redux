@@ -1,5 +1,5 @@
 export const environment = {
-  burn_ban_in_effect: true,
+  burn_ban_in_effect: false,
   burn_ban_locale: 'Fayette County',
   burn_ban_start_date: '07/13/2023',
   burn_ban_duration: 90,
