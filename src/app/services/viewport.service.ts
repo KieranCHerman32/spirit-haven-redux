@@ -158,7 +158,6 @@ export class ViewportService {
     if (sideNav) {
       console.log(sideNav);
       console.log(this.footerOffset);
-      sideNav.style.color = 'hotpink';
       sideNav.style.padding = `1rem 1rem ${this.footerOffset}px 1rem`;
     }
   }
