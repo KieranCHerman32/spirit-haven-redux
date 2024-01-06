@@ -1,6 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
-import * as bootstrap from 'bootstrap';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  inject,
+} from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { DropdownService } from '../services/dropdown.service';
 import { ViewportService } from '../services/viewport.service';
 
 @Component({
@@ -8,101 +13,36 @@ import { ViewportService } from '../services/viewport.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements AfterViewInit, AfterViewChecked {
   env = environment;
-  memberAuth: any;
-
   viewportService = inject(ViewportService);
-
-  hoverList!: NodeListOf<Element>;
-  dropdownElementList!: NodeListOf<Element>;
-  dropdownInstanceList!: bootstrap.Dropdown[];
-  communityDropdown!: bootstrap.Dropdown;
-  festivalDropdown!: bootstrap.Dropdown;
-  ranchDropdown!: bootstrap.Dropdown;
+  dropdownService = inject(DropdownService);
 
   constructor() {}
 
-  ngOnInit(): void {
-    const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
-    const dropdownList = [...dropdownElementList].map((dropdownToggleEl) => {
-      this.dropdownInit(dropdownToggleEl);
-    });
+  ngAfterViewInit(): void {
+    this.dropdownLayoutToggle();
   }
 
-  dropdownInit(element: Element) {
-    const id = element.id;
-    // TODO: Find a cleaner way to implement this.
-    switch (id) {
-      case 'community':
-        this.communityDropdown =
-          bootstrap.Dropdown.getOrCreateInstance(element);
-        break;
-      case 'festival':
-        this.festivalDropdown = bootstrap.Dropdown.getOrCreateInstance(element);
-        break;
-      case 'ranch':
-        this.ranchDropdown = bootstrap.Dropdown.getOrCreateInstance(element);
-        break;
-      default:
-        break;
+  ngAfterViewChecked(): void {
+    this.dropdownLayoutToggle();
+  }
+
+  dropdownLayoutToggle() {
+    if (!this.viewportService.mobileNav) {
+      this.dropdownService.getDropdownList();
     }
-
-    if (this.communityDropdown && this.festivalDropdown && this.ranchDropdown) {
-      this.dropdownInstanceList = [
-        this.communityDropdown,
-        this.festivalDropdown,
-        this.ranchDropdown,
-      ];
-
-      this.hoverList = document.querySelectorAll(
-        '.btn, .dropdown-toggle, .dropdown-menu, .dropdown-header, .dropdown-item'
-      );
-    }
-  }
-
-  selectInstance(id: string) {
-    switch (id) {
-      case 'community':
-        return this.communityDropdown;
-      case 'festival':
-        return this.festivalDropdown;
-      case 'ranch':
-        return this.ranchDropdown;
-      default:
-        return;
-    }
-  }
-
-  openDropdown(id: string) {
-    this.closeAll(id);
-    const el = this.selectInstance(id);
-    el?.show();
-  }
-
-  closeDropdown(id: string) {
-    const el = this.selectInstance(id);
-    el?.hide();
-  }
-
-  closeAll(excludeId?: string) {
-    this.dropdownInstanceList.forEach((dropdown) => {
-      if (!excludeId || dropdown != this.selectInstance(excludeId)) {
-        dropdown.hide();
-      }
-    });
   }
 
   hover() {
-    let hover: boolean = false;
-    this.hoverList.forEach((el) => {
-      if (el.matches(':hover')) {
-        hover = true;
-      }
-    });
+    if (!this.viewportService.mobileNav) {
+      this.dropdownService.hover();
+    }
+  }
 
-    if (!hover) {
-      this.closeAll();
+  closeAll() {
+    if (!this.viewportService.mobileNav) {
+      this.dropdownService.closeAll();
     }
   }
 }

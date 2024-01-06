@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { LayoutModule } from '@angular/cdk/layout';
@@ -13,7 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from '@coreui/angular';
+import { CarouselModule, DropdownService } from '@coreui/angular';
 import {
   FaIconLibrary,
   FontAwesomeModule,
@@ -93,7 +93,18 @@ import { ViewportService } from './services/viewport.service';
     MatSidenavModule,
     LayoutModule,
   ],
-  providers: [ViewportService],
+  providers: [
+    ViewportService,
+    DropdownService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (vs: ViewportService) => () => {
+        return vs.load();
+      },
+      deps: [ViewportService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

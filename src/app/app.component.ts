@@ -11,9 +11,8 @@ export class AppComponent {
 
   constructor(public viewportService: ViewportService) {}
 
-  ngOnInit(): void {
-    this.viewportService.getLayoutChange();
-    this.viewportService.getBreakpointChange();
+  ngAfterViewInit(): void {
+    this.viewportService.getOffsets();
   }
 
   ngOnDestroy() {

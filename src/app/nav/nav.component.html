@@ -3,185 +3,197 @@
   </app-burn-banner>
 </ng-container>
 
-<mat-toolbar (mouseleave)="closeAll()" (mouseover)="hover()">
-  <div class="row align-items-center no-gutters w-100">
-    <div id="logo">
-      <img priority class="img-fluid pad-fix" ngSrc="assets/png/logo-text-purple.png"
-           alt="Spirit Haven Typographical Logo" height="50" width="433.5" routerLink="" routerLinkActive="active"
-           ariaCurrentWhenActive="page">
-      <!-- Spirit Haven Logo Text -->
+<ng-container *ngIf="!viewportService.mobileNav">
+  <ng-container *ngTemplateOutlet="nav"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="viewportService.mobileNav">
+  <ng-container *ngTemplateOutlet="mobileNav"></ng-container>
+</ng-container>
+
+<!-- TEMPLATES -->
+
+<ng-template #about>
+  <div class="nav-item">
+    <a class="btn" type="button">
+      <span class="hover" routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>
+    </a>
+  </div>
+</ng-template>
+
+<ng-template #community>
+  <div class="nav-item" (mouseover)="dropdownService.openDropdown('community')">
+    <div class="dropdown">
+      <a id="community" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
+         data-bs-reference="parent" aria-expanded="false" routerLink="community" routerLinkActive="active"
+         ariaCurrentWhenActive="page">
+        <span class="hover">Community</span>
+      </a>
+
+      <ul class="dropdown-menu" (mouseleave)="dropdownService.closeDropdown('community')">
+        <li>
+          <h6 class="dropdown-header">Click above to go to Community</h6>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="community/membership" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Membership
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="community/governance" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Governance
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="community/policies" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Policies
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="community/merchandise" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Merchandise
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
+</ng-template>
 
-    <!-- Visible to ALL -->
-    <!-- ABOUT -->
-    <ng-container>
-      <div class="nav-item">
-        <a class="btn" type="button">
-          <span class="hover" routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>
-        </a>
-      </div>
-    </ng-container>
+<ng-template #festival>
+  <div class="nav-item">
+    <div class="dropdown" (mouseover)="dropdownService.openDropdown('festival')">
+      <a id="festival" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
+         data-bs-reference="parent" aria-expanded="false" routerLink="festivals" routerLinkActive="active"
+         ariaCurrentWhenActive="page">
+        <span class="hover">Festivals</span>
+      </a>
 
-    <!-- COMMUNITY -->
-    <ng-container>
-      <div class="nav-item" (mouseover)="openDropdown('community')">
-        <div class="dropdown">
-          <a id="community" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-             data-bs-auto-close="true" data-bs-reference="parent" aria-expanded="false" routerLink="community"
-             routerLinkActive="active" ariaCurrentWhenActive="page">
-            <span class="hover">Community</span>
-          </a>
-
-          <ul class="dropdown-menu" (mouseleave)="closeDropdown('community')">
-            <li>
-              <h6 class="dropdown-header">Click above to go to Community</h6>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="community/membership" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Membership
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="community/governance" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Governance
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="community/policies" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Policies
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="community/merchandise" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Merchandise
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </ng-container>
-
-    <!-- FESTIVAL -->
-    <ng-container>
-      <div class="nav-item">
-        <div class="dropdown" (mouseover)="openDropdown('festival')">
-          <a id="festival" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
-             data-bs-reference="parent" aria-expanded="false" routerLink="festivals" routerLinkActive="active"
+      <ul class="dropdown-menu" (mouseleave)="dropdownService.closeDropdown('festival')">
+        <li>
+          <h6 class="dropdown-header">Click above to go to Festivals</h6>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="festivals/samhain-2023" routerLinkActive="active"
              ariaCurrentWhenActive="page">
-            <span class="hover">Festivals</span>
+            Samhain 2023
           </a>
-
-          <ul class="dropdown-menu" (mouseleave)="closeDropdown('festival')">
-            <li>
-              <h6 class="dropdown-header">Click above to go to Festivals</h6>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="festivals/samhain-2023" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Samhain 2023
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="festivals/vending-at-festivals" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Vending at Festivals
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </ng-container>
-
-    <!-- SPIRIT HAVEN RANCH -->
-    <ng-container>
-      <div class="nav-item">
-        <div class="dropdown" (mouseover)="openDropdown('ranch')">
-          <a id="ranch" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
-             data-bs-reference="parent" aria-expanded="false" routerLink="ranch" routerLinkActive="active"
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="festivals/vending-at-festivals" routerLinkActive="active"
              ariaCurrentWhenActive="page">
-            <span class="hover">Spirit Haven Ranch</span>
+            Vending at Festivals
           </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
 
-          <ul class="dropdown-menu" (mouseleave)="closeDropdown('ranch')">
-            <li>
-              <h6 class="dropdown-header">Click above to go to Spirit Haven Ranch</h6>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="ranch/workends" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                WorkEnds
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="ranch/hosting-at-shr" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Hosting at Spirit Haven Ranch
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" routerLink="ranch/sacred-spaces" routerLinkActive="active"
-                 ariaCurrentWhenActive="page">
-                Sacred Spaces Directory
-              </a>
-            </li>
-          </ul>
-        </div>
+<ng-template #ranch>
+  <div class="nav-item">
+    <div class="dropdown" (mouseover)="dropdownService.openDropdown('ranch')">
+      <a id="ranch" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
+         data-bs-reference="parent" aria-expanded="false" routerLink="ranch" routerLinkActive="active"
+         ariaCurrentWhenActive="page">
+        <span class="hover">Spirit Haven Ranch</span>
+      </a>
+
+      <ul class="dropdown-menu" (mouseleave)="dropdownService.closeDropdown('ranch')">
+        <li>
+          <h6 class="dropdown-header">Click above to go to Spirit Haven Ranch</h6>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="ranch/workends" routerLinkActive="active" ariaCurrentWhenActive="page">
+            WorkEnds
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="ranch/hosting-at-shr" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Hosting at Spirit Haven Ranch
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="ranch/sacred-spaces" routerLinkActive="active"
+             ariaCurrentWhenActive="page">
+            Sacred Spaces Directory
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #contact>
+  <div class="nav-item">
+    <a class="btn hover" type="button">
+      <span routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</span>
+    </a>
+  </div>
+</ng-template>
+
+<!-- Main (Landscape, Web, Desktop) Nav Bar -->
+<ng-template #nav>
+  <mat-toolbar (mouseleave)="closeAll()" (mouseover)="hover()">
+    <div class="row align-items-center no-gutters w-100">
+      <div id="logo" class="">
+        <!-- Spirit Haven Logo Text -->
+        <img priority class="img-fluid" ngSrc="assets/png/logo-text-purple.png" alt="Spirit Haven Typographical Logo"
+             height="50" width="433.5" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
       </div>
-    </ng-container>
 
-    <!-- CONTACT -->
-    <ng-container>
-      <div class="nav-item">
-        <a class="btn hover" type="button">
-          <span routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</span>
-        </a>
-      </div>
-    </ng-container>
+      <ng-container>
+        <!-- ABOUT -->
+        <ng-container [ngTemplateOutlet]="about"></ng-container>
 
-    <div id="nav-end">
-      <ng-container *ngIf="memberAuth; else login">
-        <div class="nav-item pad-fix">
-          <!-- Visible to Members Regardless of Membership Status -->
-          <button mat-icon-button #accountTrigger="matMenuTrigger" [matMenuTriggerFor]="account">
-            <mat-icon>person</mat-icon>
-          </button>
-        </div>
+        <!-- COMMUNITY -->
+        <ng-container [ngTemplateOutlet]="community"></ng-container>
 
-        <mat-menu #account="matMenu" [hasBackdrop]="false">
-          <button mat-menu-item ariaCurrentWhenActive="page" disabled>{{memberAuth.prefName}}</button>
-          <mat-divider>
-          </mat-divider>
-          <button mat-menu-item routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Account</button>
-          <button *ngIf="memberAuth.active" mat-menu-item routerLink="" routerLinkActive="active"
-                  ariaCurrentWhenActive="page">Dashboard</button>
-          <button mat-menu-item routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Logout</button>
-        </mat-menu>
+        <!-- FESTIVAL -->
+        <ng-container [ngTemplateOutlet]="festival"></ng-container>
+
+        <!-- SPIRIT HAVEN RANCH -->
+        <ng-container [ngTemplateOutlet]="ranch"></ng-container>
+
+        <!-- CONTACT -->
+        <ng-container [ngTemplateOutlet]="contact"></ng-container>
       </ng-container>
 
-      <ng-template #login>
-        <div class="nav-item pad-fix">
+      <div id="nav-end">
+        <div class="nav-item ">
           <button mat-fab extended routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
             Login / Register
           </button>
         </div>
-      </ng-template>
+      </div>
     </div>
+  </mat-toolbar>
+</ng-template>
 
-    <div id="nav-menu" class="pad-fix">
-      <button id="nav" class="btn" mat-fab (click)="sidenav.toggle()">
-        <span class="hover">
-          <mat-icon>menu</mat-icon>
-        </span>
-      </button>
+<!-- Main (Portrait, Tablet, Handset) Nav Bar -->
+<ng-template #mobileNav>
+  <mat-toolbar>
+    <div class="row align-items-center no-gutters w-100">
+      <div id="logo" class="">
+        <!-- Spirit Haven Logo (No Text) -->
+        <img priority class="img-fluid" ngSrc="assets/png/logo-no-text.png" alt="Spirit Haven Logo" height="25"
+             width="27.5" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+      </div>
+
+      <div class="nav-item ">
+        <button id="nav" class="btn" mat-fab (click)="sidenav.toggle()">
+          <span class="hover">
+            <mat-icon>menu</mat-icon>
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
-</mat-toolbar>
+  </mat-toolbar>
 
-<ng-container>
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" fixedInViewport="true" hasBackdrop="true" position="end"
                  [fixedTopGap]="viewportService.navOffset" [fixedBottomGap]="viewportService.footerOffset">
@@ -190,4 +202,4 @@
     <mat-sidenav-content [ngStyle]="{'min-height.px': viewportService.offsetString()}">
     </mat-sidenav-content>
   </mat-sidenav-container>
-</ng-container>
+</ng-template>
