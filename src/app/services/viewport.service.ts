@@ -14,9 +14,9 @@ export class ViewportService {
 
   currentScreenSize = '';
   currentScreenLayout = '';
-  navOffset: number = 0;
-  footerOffset: number = 0;
-  viewportOffset: number = 0;
+  navOffset: string = '0';
+  footerOffset: string = '0';
+  viewportOffset: string = '0';
   mobileNav: boolean = false;
 
   destroyed = new Subject<void>();
@@ -72,10 +72,10 @@ export class ViewportService {
   constructor(public breakpointObserver: BreakpointObserver) {}
 
   async load() {
-    console.log('Load method');
+    // console.log('Load method');
     this.getLayoutChange();
     this.getBreakpointChange();
-    this.log();
+    // this.log();
   }
 
   log() {
@@ -84,14 +84,12 @@ export class ViewportService {
   }
 
   getLayoutChange() {
-    console.log('reading layout');
     this.breakpointObserver
       .observe(this.layouts)
       .pipe(takeUntil(this.destroyed))
       .subscribe((result) => {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
-            console.log(query);
             if (this.currentScreenLayout != query) {
               this.currentScreenLayout = query
                 // TODO: Regex to pull orientation value from string
@@ -99,7 +97,7 @@ export class ViewportService {
                 .replace('orientation: ', '')
                 .replace(')', '');
               this.getMobileNav();
-              this.log();
+              // this.log();
             }
           }
         }
@@ -107,7 +105,6 @@ export class ViewportService {
   }
 
   getBreakpointChange() {
-    console.log('reading breakpoint');
     this.breakpointObserver
       .observe(this.breakpoints)
       .pipe(takeUntil(this.destroyed))
@@ -117,11 +114,10 @@ export class ViewportService {
             result.breakpoints[query] &&
             this.currentScreenSize != this.displayNameMap.get(query)
           ) {
-            console.log(query);
             this.currentScreenSize =
               this.displayNameMap.get(query) ?? 'Unknown';
             this.getMobileNav();
-            this.log();
+            // this.log();
           }
         }
       });
@@ -131,7 +127,8 @@ export class ViewportService {
     const offset = document
       .querySelector('mat-toolbar')
       ?.getBoundingClientRect().height!;
-    this.navOffset = this.navOffset !== offset ? offset : this.navOffset;
+    this.navOffset =
+      this.navOffset !== String(offset) ? String(offset) : this.navOffset;
 
     this.getFooterOffset();
   }
@@ -141,13 +138,12 @@ export class ViewportService {
       .querySelector('app-footer mat-toolbar')
       ?.getBoundingClientRect().height!;
     this.footerOffset =
-      this.footerOffset !== offset ? offset : this.footerOffset;
+      this.footerOffset !== String(offset) ? String(offset) : this.footerOffset;
 
     this.getViewportOffset();
   }
 
   getViewportOffset() {
-    console.log;
     const offset =
       this.navOffset && this.footerOffset
         ? this.navOffset + this.footerOffset
@@ -155,20 +151,19 @@ export class ViewportService {
     this.viewportOffset =
       this.viewportOffset !== offset ? offset : this.viewportOffset;
 
-    document
-      .querySelector('.mat-sidenav')
-      ?.setAttribute('min-height', `calc(100% - ${this.footerOffset})`);
-  }
+    const sideNav = document.querySelector(
+      '.mat-drawer-inner-container'
+    ) as HTMLElement;
 
-  offsetString() {
-    console.log(window.innerHeight);
-    console.log(this.viewportOffset);
-    console.log(window.innerHeight - this.viewportOffset);
-    return String(window.innerHeight - this.viewportOffset);
+    if (sideNav) {
+      console.log(sideNav);
+      console.log(this.footerOffset);
+      sideNav.style.color = 'hotpink';
+      sideNav.style.padding = `1rem 1rem ${this.footerOffset}px 1rem`;
+    }
   }
 
   getMobileNav() {
-    console.log('mobileNav');
     const mobileNav = this.mobileBreakpoints.includes(this.currentScreenSize);
     this.mobileNav = mobileNav;
     if (this.mobileNav == true) {
