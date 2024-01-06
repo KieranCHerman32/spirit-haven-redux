@@ -59,7 +59,7 @@ a,
 }
 
 // a:not(.active)::after,
-.hover:not(.active, #nav-menu *)::after {
+.hover:not(button, .active, #nav-menu *)::after {
   display: block;
   content: '';
   position: relative;
@@ -85,8 +85,7 @@ a,
   transition: color .125s ease-out;
 }
 
-.hover.active,
-.btn.active {
+.active {
   color: $sh-teal;
 }
 

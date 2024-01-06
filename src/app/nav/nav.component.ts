@@ -18,6 +18,8 @@ export class NavComponent implements AfterViewInit, AfterViewChecked {
   viewportService = inject(ViewportService);
   dropdownService = inject(DropdownService);
 
+  sideNavActive: boolean = false;
+
   constructor() {}
 
   ngAfterViewInit(): void {

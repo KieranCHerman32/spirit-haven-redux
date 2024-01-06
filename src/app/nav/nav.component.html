@@ -184,11 +184,12 @@
              width="27.5" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
       </div>
 
-      <div class="nav-item ">
-        <button id="nav" class="btn" mat-fab (click)="sidenav.toggle()">
-          <span class="hover">
-            <mat-icon>menu</mat-icon>
-          </span>
+      <div class="nav-item">
+        <button mat-icon-button id="nav" class="hover" (click)="sidenav.toggle(); sideNavActive = !sideNavActive"
+                [class.active]="sideNavActive">
+          <!-- <span class="hover"> -->
+          <mat-icon>menu</mat-icon>
+          <!-- </span> -->
         </button>
       </div>
     </div>
